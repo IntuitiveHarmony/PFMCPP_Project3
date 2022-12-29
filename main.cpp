@@ -257,19 +257,6 @@ Example:
     these 5 Sub Objects will need to be defined with 5 primitive 
     properties and 3 actions EACH.
     
-    myUDT: Synthesizer
-
-    A Synthesizer is made up of the following UDT
-        Oscillator
-        LFO
-        Envelope
-        Filter    
-        Keybed
-
-    A Synthesizer can do three things
-        make sound
-        sequence patterns
-        save a patch
 */
 
 /*
@@ -287,30 +274,6 @@ example:
         area in cm2 (int)
         brand (std::string)
 
-    Oscillator:
-        pitch (int)
-        octave (int)
-        type (std::string)
-        playSound (bool)
-    LFO:
-        frequency (int)
-        depth (int)
-        type (std::string)
-        isActive (bool)
-    Envelope:
-        Attack (int)
-        Sustain (int)
-        Deacy (int)
-        Release (int)
-    Filter:
-        Resonance (int)
-        Cutoff (int)
-        type (std::string)
-    Keybed:
-        number of keys (int)
-        type of keys (std::string)
-        hasAftertouch (bool)
-        
 */
 
 /*
@@ -444,36 +407,7 @@ example:
         width in cm (int)
         height in cm (int)
 
-    Gears:
-        number of gears (int)
-        brand (std::string)
-        type (std::string)
-        condition (char)
-        need maintenance? (bool)
-    Frame:
-        weight (int)
-        type (std::string)
-        material (std::string)
-        brand (std::string)
-        need maintenance? (bool)
-    Wheel:
-        circumference (float)
-        number of spokes (int)
-        material (std::string)
-        brand (std::string)
-        need maintenance? (bool)
-    Brakes:
-        type (std::string)
-        brand (std::string)
-        material (std::string)
-        amount of pad left (float)
-        need maintenance? (bool)
-    Handlebars:
-        type (std::string)
-        material (std::string)
-        width (float)
-        brand (std::string)
-        need maintenance? (bool)
+
 */
 
 /*
@@ -504,11 +438,11 @@ MOVE THEM to the space below this block comment and put them in numerical order
 /*
 Thing 1) Computer
 5 properties:
-    1) amount of storage
-    2) amount of RAM  
+    1) amount of storage (int)
+    2) amount of RAM (int)
     3) manufacturer name
-    4) size of screen
-    5) number of usb ports
+    4) size of screen (int)
+    5) number of usb ports (int)
 3 things it can do:
     1) connect to internet
     2) save files
@@ -516,11 +450,11 @@ Thing 1) Computer
 
 Thing 2) Car
 5 properties:
-    1) engine size
-    2) make
-    3) model
-    4) number of seats 
-    5) average miles per gallon
+    1) engine size (int)
+    2) make (std::string)
+    3) model (std::string)
+    4) number of seats (int)
+    5) average miles per gallon (float)
 3 things it can do:
     1) the car can move forward
     2) the car can stop
@@ -528,11 +462,11 @@ Thing 2) Car
 
 Thing 3) Tree
 5 properties:
-    1) height 
-    2) age   
-    3) type
-    4) location
-    5) number of branches
+    1) height (int)
+    2) age (int)
+    3) type (std::string)
+    4) location (std::string)
+    5) number of branches (int)
 3 things it can do:
     1) grow
     2) produce fruit
@@ -540,11 +474,11 @@ Thing 3) Tree
 
 Thing 4) Person
 5 properties:
-    1) height
-    2) age
-    3) number of siblings
-    4) job
-    5) address
+    1) height (int)
+    2) age (int)
+    3) number of siblings (int)
+    4) job (std::string)
+    5) address (std::string)
 3 things it can do:
     1) run
     2) jump
@@ -552,11 +486,11 @@ Thing 4) Person
 
 Thing 5) Gears
 5 properties:
-    1) number of gears
-    2) brand
-    3) type
-    4) condition
-    5) need maintenance?
+    1) number of gears (int)
+    2) brand (std::string)
+    3) type (std::string)
+    4) condition (std::string)
+    5) need maintenance? (bool)
 3 things it can do:
     1) propel the bike
     2) spin independently of wheel
@@ -564,11 +498,11 @@ Thing 5) Gears
 
 Thing 6) Frame
 5 properties:
-    1) weight
-    2) type
-    3) material
-    4) brand
-    5) need maintenance?
+    1) weight (int)
+    2) type (std::string)
+    3) material (std::string)
+    4) brand (std::string)
+    5) need maintenance? (bool)
 3 things it can do:
     1) adjust seat height
     2) absorb shock from bumps
@@ -576,11 +510,11 @@ Thing 6) Frame
 
 Thing 7) Wheel
 5 properties:
-    1) circumference
-    2) number of spokes
-    3) material
-    4) brand
-    5) need maintenance?
+    1) circumference (int)
+    2) number of spokes (int)
+    3) material (std::string)
+    4) brand (std::string)
+    5) need maintenance? (bool)
 3 things it can do:
     1) spin
     2) absorb shock from bumps
@@ -588,11 +522,11 @@ Thing 7) Wheel
 
 Thing 8) Brakes
 5 properties:
-    1) type
-    2) brand
-    3) material
-    4) amount of pad left
-    5) need maintenance?
+    1) type (std::string)
+    2) brand (std::string)
+    3) material (std::string)
+    4) amount of pad left (int)
+    5) need maintenance? (bool)
 3 things it can do:
     1) stop the bike
     2) slow the bike
@@ -600,11 +534,11 @@ Thing 8) Brakes
 
 Thing 9) Handlebars
 5 properties:
-    1) type
-    2) material
-    3) width
-    4) brand
-    5) need maintenance?
+    1) type (std::string)
+    2) material (std::string)
+    3) width (float)
+    4) brand (std::string)
+    5) need maintenance? (bool)
 3 things it can do:
     1) turn the bike
     2) engage the brakes
@@ -612,11 +546,11 @@ Thing 9) Handlebars
 
 Thing 10) Bicycle
 5 properties:
-    1) Gears
-    2) Frame
-    3) Wheel
-    4) Brakes
-    5) Handlebars
+    1) Gears (auto)
+    2) Frame (auto)
+    3) Wheel (auto)
+    4) Brakes (auto)
+    5) Handlebars (auto)
 3 things it can do:
     1) shift gears
     2) pedal forward
