@@ -1099,6 +1099,227 @@ struct CarWash
     //detail the car interior
     void detailInterior();
 };
+
+struct Computer
+{
+    // amount of storage
+    float storageAmount = 30.31f;
+    // amount of RAM
+    int RAMAmount = 16;
+    // manufacturer name
+    std::string manufacturer = "Mac";
+    // size of screen
+    float screenSize = 13.1f;
+    // number of usb ports (int)
+    int amountUSBPort = 2;
+
+    // 3 things it can do:
+    // 1) connect to internet
+    void connectToInternet();
+    // 2) save files
+    void save();
+    //     3) run apps
+    void runApp();
+};
+
+struct Car
+{
+    // engine size
+    float engineSize = 13.1f;
+    // make
+    std::string make = "Subaru";
+    // model
+    std::string model = "Outback";
+    // number of seats
+    int numberOfSeats = 5;
+    // average miles per gallon (float)
+    float averageMPG = 30.2f;
+
+    // 3 things it can do:
+    // 1) the car can move forward
+    int moveForward(int distanceTraveled, int time); // returns speed
+    // 2) the car can stop
+    void stopMovement();
+    // 3) the car can turn
+    bool turn(); // return whether the car will turn or not
+    
+};
+
+struct Tree
+{
+    // height 
+    float height = 13.7f;
+    // age
+    int age = 23;
+    // type 
+    std::string type = "Maple";
+    // location
+    std::string location = "Backyard";
+    // number of branches (int)
+    int numberOfBranches = 10349;
+
+    // 3 things it can do:
+    // 1) grow
+    int grow(int sunlight, int water); // returns growth amount
+    // 2) produce fruit
+    void produceFruit();
+    // 3) photosynthesize
+    void photosynthesize();
+};
+
+struct Person
+{
+    // height
+    float height = 5.4f;
+    // age
+    int age = 29;
+    // number of siblings
+    int numberOfSiblings = 3;
+    // job
+    std::string job = "Driver";
+    // address
+    std::string address = "1 S Anywhere St";
+
+    // 3 things it can do:
+    // 1) run
+    void run(int speed);
+    // 2) jump
+    void jump(int height);
+    // 3) play piano
+    void playPiano(std::string piece);
+};
+
+struct Gears
+{
+    // number of gears
+    int numberOfGears = 5;
+    // brand 
+    std::string brand = "Acme";
+    // type
+    std::string type = "Sproket";
+    // condition
+    std::string condition = "Good";
+    // need maintenance?
+    bool needmaintenance = false;
+
+    // 3 things it can do:
+    // 1) propel the bike
+    void propelBike();
+    // 2) spin independently of wheel
+    void freeSpin();
+    // 3) shift gear ratio
+    int shiftGear(); // returns the current gear
+};
+
+struct Frame
+{
+    // weight
+    float weight = 3.7f;
+    // type
+    char type = 'A';
+    // material
+    std::string material = "Carbon Fiber";
+    // brand    
+    std::string brand = "Acme";
+    // need maintenance?
+    bool needmaintenance = false;
+
+    // 3 things it can do:
+    // 1) adjust seat height
+    int adjustSeatHight(int riderHeight); // returns the height of the seat
+    // 2) absorb shock from bumps
+    void shockAbsorb();
+    // 3) support weight of rider
+    void supportWeight();
+};
+
+struct Wheel
+{
+    // circumference
+    float circumference = 30.2f;
+    // number of spokes
+    int numberOfSpokes = 25;
+    // material
+    std::string material = "Aluminum";
+    // brand
+    std::string brand = "Acme";
+    // need maintenance?
+    bool needmaintenance = false;
+
+    // 3 things it can do:
+    // 1) spin
+    int spin(int speed); // returns spin duration 
+    // 2) absorb shock from bumps
+    void shockAbsorb();
+    // 3) support weight of rider
+    void supportWeight();
+};
+
+struct Brakes
+{
+    // type
+    char type = 'B';
+    // brand
+    std::string brand = "Acme";
+    // material
+    std::string material = "Rubber";
+    // amount of pad left
+    float padRemaining = 0.2f;
+    // need maintenance?
+    bool needmaintenance = true;
+
+    // 3 things it can do:
+    // 1) stop the bike
+    void stop();
+    // 2) slow the bike
+    void slow();
+    // 3) squeak when needing to be replaced
+    bool replaceSqueek(int padRemaining); // returns a boolean telling if the pads need replaced 
+};
+
+struct Handlebars
+{
+    // type
+    char type = 'D';
+    // material
+    std::string material = "Carbon Fiber";
+    // width
+    float width = 7.9f;
+    // brand
+    std::string brand = "Acme";
+    // need maintenance?
+    bool needmaintenance = false;
+
+    // 3 things it can do:
+    // 1) turn the bike
+    bool turn(); // returns if the bike will turn or not
+    // 2) engage the brakes
+    bool engageBrakes();  // returns if the bike will brake or not
+    // 3) shift the gears
+    void shiftGears(int desiredGear);
+};
+
+struct Bicycle
+{
+    // Gears
+    struct Gears;
+    // Frame
+    struct Frame;
+    // Wheel
+    struct Wheel;
+    // Brakes
+    struct Brakes;
+    // Handlebars
+    struct Handlebars;
+
+    // 3 things it can do:
+    // 1) shift gears
+    void shiftGears(int desiredGear);
+    // 2) pedal forward
+    void pedalForward();
+    // 3) brake
+    void brake();
+};
 /*
 =================
 Part 1e - Step 8: Commit
