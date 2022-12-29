@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1) Computer
-5 properties:
-    1) amount of storage
-    2) amount of RAM  
-    3) manufacturer name
-    4) size of screen
-    5) number of usb ports
-3 things it can do:
-    1) connect to internet
-    2) save files
-    3) run apps
 
-Thing 2) Car
-5 properties:
-    1) engine size
-    2) make
-    3) model
-    4) number of seats 
-    5) average miles per gallon
-3 things it can do:
-    1) the car can move forward
-    2) the car can stop
-    3) the car can turn
-
-Thing 3) Tree
-5 properties:
-    1) height 
-    2) age   
-    3) type
-    4) location
-    5) number of branches
-3 things it can do:
-    1) grow
-    2) produce fruit
-    3) photosynthesize
-
-Thing 4) Person
-5 properties:
-    1) height
-    2) age
-    3) number of siblings
-    4) job
-    5) address
-3 things it can do:
-    1) run
-    2) jump
-    3) play piano
 */
 
 /*
@@ -376,17 +330,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10) Bicycle
-5 properties:
-    1) Gears
-    2) Frame
-    3) Wheel
-    4) Brakes
-    5) Handlebars
-3 things it can do:
-    1) shift gears
-    2) pedal forward
-    3) brake
+
  */
 
  /*
@@ -473,65 +417,7 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5) Gears
-5 properties:
-    1) number of gears
-    2) brand
-    3) type
-    4) condition
-    5) need maintenance?
-3 things it can do:
-    1) propel the bike
-    2) spin independently of wheel
-    3) shift gear ratio
 
-Thing 6) Frame
-5 properties:
-    1) weight
-    2) type
-    3) material
-    4) brand
-    5) need maintenance?
-3 things it can do:
-    1) adjust seat height
-    2) absorb shock from bumps
-    3) support weight of rider
-
-Thing 7) Wheel
-5 properties:
-    1) circumference
-    2) number of spokes
-    3) material
-    4) brand
-    5) need maintenance?
-3 things it can do:
-    1) spin
-    2) absorb shock from bumps
-    3) support weight of rider
-
-Thing 8) Brakes
-5 properties:
-    1) type
-    2) brand
-    3) material
-    4) amount of pad left
-    5) need maintenance?
-3 things it can do:
-    1) stop the bike
-    2) slow the bike
-    3) squeak when needing to be replaced
-
-Thing 9) Handlebars
-5 properties:
-    1) type
-    2) material
-    3) width
-    4) brand
-    5) need maintenance?
-3 things it can do:
-    1) turn the bike
-    2) engage the brakes
-    3) shift the gears
  */
 
 /*
@@ -615,12 +501,127 @@ MOVE THEM to the space below this block comment and put them in numerical order
     simply CUT and PASTE them in the space provided below:
 */
 
+/*
+Thing 1) Computer
+5 properties:
+    1) amount of storage
+    2) amount of RAM  
+    3) manufacturer name
+    4) size of screen
+    5) number of usb ports
+3 things it can do:
+    1) connect to internet
+    2) save files
+    3) run apps
 
+Thing 2) Car
+5 properties:
+    1) engine size
+    2) make
+    3) model
+    4) number of seats 
+    5) average miles per gallon
+3 things it can do:
+    1) the car can move forward
+    2) the car can stop
+    3) the car can turn
 
+Thing 3) Tree
+5 properties:
+    1) height 
+    2) age   
+    3) type
+    4) location
+    5) number of branches
+3 things it can do:
+    1) grow
+    2) produce fruit
+    3) photosynthesize
 
+Thing 4) Person
+5 properties:
+    1) height
+    2) age
+    3) number of siblings
+    4) job
+    5) address
+3 things it can do:
+    1) run
+    2) jump
+    3) play piano
 
+Thing 5) Gears
+5 properties:
+    1) number of gears
+    2) brand
+    3) type
+    4) condition
+    5) need maintenance?
+3 things it can do:
+    1) propel the bike
+    2) spin independently of wheel
+    3) shift gear ratio
 
+Thing 6) Frame
+5 properties:
+    1) weight
+    2) type
+    3) material
+    4) brand
+    5) need maintenance?
+3 things it can do:
+    1) adjust seat height
+    2) absorb shock from bumps
+    3) support weight of rider
 
+Thing 7) Wheel
+5 properties:
+    1) circumference
+    2) number of spokes
+    3) material
+    4) brand
+    5) need maintenance?
+3 things it can do:
+    1) spin
+    2) absorb shock from bumps
+    3) support weight of rider
+
+Thing 8) Brakes
+5 properties:
+    1) type
+    2) brand
+    3) material
+    4) amount of pad left
+    5) need maintenance?
+3 things it can do:
+    1) stop the bike
+    2) slow the bike
+    3) squeak when needing to be replaced
+
+Thing 9) Handlebars
+5 properties:
+    1) type
+    2) material
+    3) width
+    4) brand
+    5) need maintenance?
+3 things it can do:
+    1) turn the bike
+    2) engage the brakes
+    3) shift the gears
+
+Thing 10) Bicycle
+5 properties:
+    1) Gears
+    2) Frame
+    3) Wheel
+    4) Brakes
+    5) Handlebars
+3 things it can do:
+    1) shift gears
+    2) pedal forward
+    3) brake
+*/
 
 /*
 =================
