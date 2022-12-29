@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) horn   
+            4) media controls
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) sound horn
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) speedometer
+            2) info screen
+            3) fuel gauge
+            4) clock
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) display time
+            2) display MPH
+            3) display fuel level
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) knob
+            2) button
+            3) light
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) adjust temperature
+            2) adjust mode
+            3) indicate selection
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) knob
+            2) screen
+            3) button
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) adjust volume
+            2) display information
+            3) select mode
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) warmer
+            2) handle
+            3) lever
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) adjust seat back and forth
+            2) heat the seat
 */
 
 /*
