@@ -514,7 +514,7 @@ Thing 8) Brakes
     1) type
     2) brand
     3) material
-    4) amount of pad 
+    4) amount of pad left
     5) need maintenance?
 3 things it can do:
     1) stop the bike
@@ -557,6 +557,37 @@ example:
         Brightness (double)
         width in cm (int)
         height in cm (int)
+
+    Gears:
+        number of gears (int)
+        brand (std::string)
+        type (std::string)
+        condition (char)
+        need maintenance? (bool)
+    Frame:
+        weight (int)
+        type (std::string)
+        material (std::string)
+        brand (std::string)
+        need maintenance? (bool)
+    Wheel:
+        circumference (float)
+        number of spokes (int)
+        material (std::string)
+        brand (std::string)
+        need maintenance? (bool)
+    Brakes:
+        type (std::string)
+        brand (std::string)
+        material (std::string)
+        amount of pad left (float)
+        need maintenance? (bool)
+    Handlebars:
+        type (std::string)
+        material (std::string)
+        width (float)
+        brand (std::string)
+        need maintenance? (bool)
 */
 
 /*
