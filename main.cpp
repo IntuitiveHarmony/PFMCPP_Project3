@@ -473,65 +473,65 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
+Thing 5) Gears
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of gears
+    2) brand
+    3) type
+    4) condition
+    5) need maintenance?
 3 things it can do:
-    1)
-    2)
-    3)
+    1) propel the bike
+    2) spin independently of wheel
+    3) shift gear ratio
 
-Thing 6)
+Thing 6) Frame
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) weight
+    2) type
+    3) material
+    4) brand
+    5) need maintenance?
 3 things it can do:
-    1)
-    2)
-    3)
+    1) adjust seat height
+    2) absorb shock from bumps
+    3) support weight of rider
 
-Thing 7)
+Thing 7) Wheel
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) circumference
+    2) number of spokes
+    3) material
+    4) brand
+    5) need maintenance?
 3 things it can do:
-    1)
-    2)
-    3)
+    1) spin
+    2) absorb shock from bumps
+    3) support weight of rider
 
-Thing 8)
+Thing 8) Brakes
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) type
+    2) brand
+    3) material
+    4) amount of pad 
+    5) need maintenance?
 3 things it can do:
-    1)
-    2)
-    3)
+    1) stop the bike
+    2) slow the bike
+    3) squeak when needing to be replaced
 
-Thing 9)
+Thing 9) Handlebars
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) type
+    2) material
+    3) width
+    4) brand
+    5) need maintenance?
 3 things it can do:
-    1)
-    2)
-    3)
+    1) turn the bike
+    2) engage the brakes
+    3) shift the gears
  */
 
 /*
