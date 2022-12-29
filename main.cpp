@@ -622,7 +622,50 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 /*
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
+struct Computer
+{
 
+};
+
+struct Car
+{
+
+};
+
+struct Tree
+{
+
+};
+
+struct Person
+{
+
+};
+
+struct Gears
+{
+
+};
+
+struct Frame
+{
+
+};
+
+struct Brakes
+{
+
+};
+
+struct Handlebars
+{
+
+};
+
+struct Bicycle
+{
+
+};
 /*
 =================
 Part 1e - Step 2: Commit
