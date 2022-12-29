@@ -302,6 +302,20 @@ Example:
     When you choose your 5 smaller parts, remember that each of 
     these 5 Sub Objects will need to be defined with 5 primitive 
     properties and 3 actions EACH.
+    
+    myUDT: Synthesizer
+
+    A Synthesizer is made up of the following UDT
+        Oscillator
+        LFO
+        Envelope
+        Filter    
+        Keybed
+
+    A Synthesizer can do three things
+        make sound
+        sequence patterns
+        save a patch
 */
 
 /*
@@ -318,6 +332,31 @@ example:
         Brightness (double)
         area in cm2 (int)
         brand (std::string)
+
+    Oscillator:
+        pitch (int)
+        octave (int)
+        type (std::string)
+        playSound (bool)
+    LFO:
+        frequency (int)
+        depth (int)
+        type (std::string)
+        isActive (bool)
+    Envelope:
+        Attack (int)
+        Sustain (int)
+        Deacy (int)
+        Release (int)
+    Filter:
+        Resonance (int)
+        Cutoff (int)
+        type (std::string)
+    Keybed:
+        number of keys (int)
+        type of keys (std::string)
+        hasAftertouch (bool)
+        
 */
 
 /*
