@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) horn   
+            4) media controls
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) sound horn
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) speedometer
+            2) info screen
+            3) fuel gauge
+            4) clock
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) display time
+            2) display MPH
+            3) display fuel level
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) knob
+            2) button
+            3) light
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) adjust temperature
+            2) adjust mode
+            3) indicate selection
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) knob
+            2) screen
+            3) button
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) adjust volume
+            2) display information
+            3) select mode
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) warmer
+            2) handle
+            3) lever
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) adjust seat back and forth
+            2) heat the seat
 */
 
 /*
@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 */
 
 /*
@@ -302,6 +256,7 @@ Example:
     When you choose your 5 smaller parts, remember that each of 
     these 5 Sub Objects will need to be defined with 5 primitive 
     properties and 3 actions EACH.
+    
 */
 
 /*
@@ -318,6 +273,7 @@ example:
         Brightness (double)
         area in cm2 (int)
         brand (std::string)
+
 */
 
 /*
@@ -337,17 +293,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+
  */
 
  /*
@@ -434,65 +380,7 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
  */
 
 /*
@@ -518,6 +406,8 @@ example:
         Brightness (double)
         width in cm (int)
         height in cm (int)
+
+
 */
 
 /*
@@ -545,12 +435,127 @@ MOVE THEM to the space below this block comment and put them in numerical order
     simply CUT and PASTE them in the space provided below:
 */
 
+/*
+Thing 1) Computer
+5 properties:
+    1) amount of storage (int)
+    2) amount of RAM (int)
+    3) manufacturer name
+    4) size of screen (int)
+    5) number of usb ports (int)
+3 things it can do:
+    1) connect to internet
+    2) save files
+    3) run apps
 
+Thing 2) Car
+5 properties:
+    1) engine size (int)
+    2) make (std::string)
+    3) model (std::string)
+    4) number of seats (int)
+    5) average miles per gallon (float)
+3 things it can do:
+    1) the car can move forward
+    2) the car can stop
+    3) the car can turn
 
+Thing 3) Tree
+5 properties:
+    1) height (int)
+    2) age (int)
+    3) type (std::string)
+    4) location (std::string)
+    5) number of branches (int)
+3 things it can do:
+    1) grow
+    2) produce fruit
+    3) photosynthesize
 
+Thing 4) Person
+5 properties:
+    1) height (int)
+    2) age (int)
+    3) number of siblings (int)
+    4) job (std::string)
+    5) address (std::string)
+3 things it can do:
+    1) run
+    2) jump
+    3) play piano
 
+Thing 5) Gears
+5 properties:
+    1) number of gears (int)
+    2) brand (std::string)
+    3) type (std::string)
+    4) condition (std::string)
+    5) need maintenance? (bool)
+3 things it can do:
+    1) propel the bike
+    2) spin independently of wheel
+    3) shift gear ratio
 
+Thing 6) Frame
+5 properties:
+    1) weight (int)
+    2) type (std::string)
+    3) material (std::string)
+    4) brand (std::string)
+    5) need maintenance? (bool)
+3 things it can do:
+    1) adjust seat height
+    2) absorb shock from bumps
+    3) support weight of rider
 
+Thing 7) Wheel
+5 properties:
+    1) circumference (int)
+    2) number of spokes (int)
+    3) material (std::string)
+    4) brand (std::string)
+    5) need maintenance? (bool)
+3 things it can do:
+    1) spin
+    2) absorb shock from bumps
+    3) support weight of rider
+
+Thing 8) Brakes
+5 properties:
+    1) type (std::string)
+    2) brand (std::string)
+    3) material (std::string)
+    4) amount of pad left (int)
+    5) need maintenance? (bool)
+3 things it can do:
+    1) stop the bike
+    2) slow the bike
+    3) squeak when needing to be replaced
+
+Thing 9) Handlebars
+5 properties:
+    1) type (std::string)
+    2) material (std::string)
+    3) width (float)
+    4) brand (std::string)
+    5) need maintenance? (bool)
+3 things it can do:
+    1) turn the bike
+    2) engage the brakes
+    3) shift the gears
+
+Thing 10) Bicycle
+5 properties:
+    1) Gears (auto)
+    2) Frame (auto)
+    3) Wheel (auto)
+    4) Brakes (auto)
+    5) Handlebars (auto)
+3 things it can do:
+    1) shift gears
+    2) pedal forward
+    3) brake
+*/
 
 /*
 =================
@@ -618,6 +623,7 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
 
+
 /*
 =================
 Part 1e - Step 2: Commit
@@ -652,7 +658,6 @@ struct CarWash
     //    - charge customer
     //    - detail the car interior
 };
-
 /*
 =================
 Part 1e - Step 4: Commit
@@ -1004,12 +1009,259 @@ Be sure to make the commit message meaningful.
 Part 1e - Step 19: Request a review
 =================
 */
+
 } //end namespace Part1E_Instructions
 
 /*
 paste your code below
 */
+struct Computer
+{
+    // amount of storage
+    float storageAmount = 30.31f;
+    // amount of RAM
+    int RAMAmount = 16;
+    // manufacturer name
+    std::string manufacturer = "Mac";
+    // size of screen
+    float screenSize = 13.1f;
+    // number of usb ports (int)
+    int amountUSBPort = 2;
 
+    // 3 things it can do:
+    // 1) connect to internet
+    void connectToInternet();
+    // 2) save files
+    void save();
+    //     3) run apps
+    void runApp();
+};
+
+struct Car
+{
+    // engine size
+    float engineSize = 13.1f;
+    // make
+    std::string make = "Subaru";
+    // model
+    std::string model = "Outback";
+    // number of seats
+    int numberOfSeats = 5;
+    // average miles per gallon (float)
+    float averageMPG = 30.2f;
+
+    // 3 things it can do:
+    // 1) the car can move forward
+    int moveForward(int distanceTraveled, int time); // returns speed
+    // 2) the car can stop
+    void stopMovement();
+    // 3) the car can turn
+    bool turn(); // return whether the car will turn or not
+    
+};
+
+struct Tree
+{
+    // height 
+    float height = 13.7f;
+    // age
+    int age = 23;
+    // type 
+    std::string type = "Apple";
+    // location
+    std::string location = "Backyard";
+    // number of branches (int)
+    int numberOfBranches = 10349;
+
+    // Nested UDT
+    struct Fruit
+    {
+        // member variables
+        std::string name= "Apple";
+        std::string color = "Green";
+        bool readyToEat = false;
+        int numberOfSeeds = 5;
+        // member functions
+        int produceSeeds(); // returns number of seeds produced
+        void fallFromTree();
+        void inspireTheoryOfGravity(); // did this actually happen with Newton?
+    };
+    // 3 things it can do:
+    // 1) grow
+    int grow(int sunlight, int water); // returns growth amount
+    // 2) produce fruit
+    Fruit produceFruit();
+    // 3) photosynthesize
+    void photosynthesize();
+};
+
+struct Person
+{
+    // height
+    float height = 5.4f;
+    // age
+    int age = 29;
+    // number of siblings
+    int numberOfSiblings = 3;
+    // job
+    std::string job = "Driver";
+    // address
+    std::string address = "1 S Anywhere St";
+
+    // Nested UDT
+    struct Eye
+    {
+        // member variables
+        std::string color = "Blue";
+        bool needsGlasses = true;
+        bool hasCataracts = false;
+        std::string typeOfColorBlindness = "Blue/ green";
+        std::string vision = "20/50";
+        // member functions
+        void open();
+        void close();
+        void see(std::string vision, std::string typeOfColorBlindness);
+    };
+    // 3 things it can do:
+    // 1) run
+    void run(int speed);
+    // 2) jump
+    void jump(int height);
+    // 3) play piano
+    void playPiano(std::string piece);
+};
+
+struct Gears
+{
+    // number of gears
+    int numberOfGears = 5;
+    // brand 
+    std::string brand = "Acme";
+    // type
+    std::string type = "Sproket";
+    // condition
+    std::string condition = "Good";
+    // need maintenance?
+    bool needmaintenance = false;
+
+    // 3 things it can do:
+    // 1) propel the bike
+    void propelBike();
+    // 2) spin independently of wheel
+    void freeSpin();
+    // 3) shift gear ratio
+    int shiftGear(); // returns the current gear
+};
+
+struct Frame
+{
+    // weight
+    float weight = 3.7f;
+    // type
+    char type = 'A';
+    // material
+    std::string material = "Carbon Fiber";
+    // brand    
+    std::string brand = "Acme";
+    // need maintenance?
+    bool needmaintenance = false;
+
+    // 3 things it can do:
+    // 1) adjust seat height
+    int adjustSeatHight(int riderHeight); // returns the height of the seat
+    // 2) absorb shock from bumps
+    void shockAbsorb();
+    // 3) support weight of rider
+    void supportWeight();
+};
+
+struct Wheel
+{
+    // circumference
+    float circumference = 30.2f;
+    // number of spokes
+    int numberOfSpokes = 25;
+    // material
+    std::string material = "Aluminum";
+    // brand
+    std::string brand = "Acme";
+    // need maintenance?
+    bool needmaintenance = false;
+
+    // 3 things it can do:
+    // 1) spin
+    int spin(int speed); // returns spin duration 
+    // 2) absorb shock from bumps
+    void shockAbsorb();
+    // 3) support weight of rider
+    void supportWeight();
+};
+
+struct Brakes
+{
+    // type
+    char type = 'B';
+    // brand
+    std::string brand = "Acme";
+    // material
+    std::string material = "Rubber";
+    // amount of pad left
+    float padRemaining = 0.2f;
+    // need maintenance?
+    bool needmaintenance = true;
+
+    // 3 things it can do:
+    // 1) stop the bike
+    void stop();
+    // 2) slow the bike
+    void slow();
+    // 3) squeak when needing to be replaced
+    bool replaceSqueek(int padRemaining); // returns a boolean telling if the pads need replaced 
+};
+
+struct Handlebars
+{
+    // type
+    char type = 'D';
+    // material
+    std::string material = "Carbon Fiber";
+    // width
+    float width = 7.9f;
+    // brand
+    std::string brand = "Acme";
+    // need maintenance?
+    bool needmaintenance = false;
+
+    // 3 things it can do:
+    // 1) turn the bike
+    bool turn(); // returns if the bike will turn or not
+    // 2) engage the brakes
+    bool engageBrakes();  // returns if the bike will brake or not
+    // 3) shift the gears
+    void shiftGears(int desiredGear);
+};
+
+struct Bicycle
+{
+    // Gears
+    Gears gears;
+    // Frame
+    Frame frame;
+    // Wheel
+    Wheel wheel;
+    // Brakes
+    Brakes brakes;
+    // Handlebars
+    Handlebars handlebars;
+
+    // 3 things it can do:
+    // 1) shift gears
+    void shiftGears(int desiredGear);
+    // 2) pedal forward
+    void pedalForward();
+    // 3) brake
+    void brake();
+};
 
 
 
