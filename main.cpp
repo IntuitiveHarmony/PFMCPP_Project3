@@ -852,15 +852,15 @@ struct Handlebars
 struct Bicycle
 {
     // Gears
-    struct Gears;
+    Gears gears;
     // Frame
-    struct Frame;
+    Frame frame;
     // Wheel
-    struct Wheel;
+    Wheel wheel;
     // Brakes
-    struct Brakes;
+    Brakes brakes;
     // Handlebars
-    struct Handlebars;
+    Handlebars handlebars;
 
     // 3 things it can do:
     // 1) shift gears
