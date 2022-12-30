@@ -622,483 +622,6 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 /*
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
-struct Computer
-{
-
-};
-
-struct Car
-{
-
-};
-
-struct Tree
-{
-
-};
-
-struct Person
-{
-
-};
-
-struct Gears
-{
-
-};
-
-struct Frame
-{
-
-};
-
-struct Brakes
-{
-
-};
-
-struct Handlebars
-{
-
-};
-
-struct Bicycle
-{
-
-};
-/*
-=================
-Part 1e - Step 2: Commit
-=================
-Now that you've made changes, make a commit!
-Be sure to make the commit message meaningful.
-*/
-
-} //end namespace Part1E_Step1
-
-namespace Part1E_Step3
-{
-/*
-=================
-Part 1e - Step 3: Assignment
-=================
-    - Below your plain-English UDT, Copy your 5 properties & 3 actions into the empty struct body.
-    - comment them out.
-    - Do this for all 10 UDTs
-    */
-
-struct CarWash 
-{
-    //5 properties:
-    //    - number of vacuum cleaners
-    //    - number of eco-friendly cleaning supplies
-    //    - stores the amount of water used per week.
-    //    - stores amount of profit made per week
-    //    - number of cars serviced per day
-    //3 things it can do:
-    //    - wash and wax car
-    //    - charge customer
-    //    - detail the car interior
-};
-
-struct Computer
-{
-    // 5 properties:
-    //     1) amount of storage (int)
-    //     2) amount of RAM (int)
-    //     3) manufacturer name
-    //     4) size of screen (int)
-    //     5) number of usb ports (int)
-    // 3 things it can do:
-    //     1) connect to internet
-    //     2) save files
-    //     3) run apps
-};
-
-struct Car
-{
-    // 5 properties:
-    //     1) engine size (int)
-    //     2) make (std::string)
-    //     3) model (std::string)
-    //     4) number of seats (int)
-    //     5) average miles per gallon (float)
-    // 3 things it can do:
-    //     1) the car can move forward
-    //     2) the car can stop
-    //     3) the car can turn
-};
-
-struct Tree
-{
-    // 5 properties:
-    //     1) height (int)
-    //     2) age (int)
-    //     3) type (std::string)
-    //     4) location (std::string)
-    //     5) number of branches (int)
-    // 3 things it can do:
-    //     1) grow
-    //     2) produce fruit
-    //     3) photosynthesize
-};
-
-struct Person
-{
-    // 5 properties:
-    //     1) height (int)
-    //     2) age (int)
-    //     3) number of siblings (int)
-    //     4) job (std::string)
-    //     5) address (std::string)
-    // 3 things it can do:
-    //     1) run
-    //     2) jump
-    //     3) play piano
-};
-
-struct Gears
-{
-    // 5 properties:
-    //     1) number of gears (int)
-    //     2) brand (std::string)
-    //     3) type (std::string)
-    //     4) condition (std::string)
-    //     5) need maintenance? (bool)
-    // 3 things it can do:
-    //     1) propel the bike
-    //     2) spin independently of wheel
-    //     3) shift gear ratio
-};
-
-struct Frame
-{
-    // 5 properties:
-    //     1) weight (int)
-    //     2) type (std::string)
-    //     3) material (std::string)
-    //     4) brand (std::string)
-    //     5) need maintenance? (bool)
-    // 3 things it can do:
-    //     1) adjust seat height
-    //     2) absorb shock from bumps
-    //     3) support weight of rider
-};
-
-struct Wheel
-{
-    // 5 properties:
-    //     1) circumference (int)
-    //     2) number of spokes (int)
-    //     3) material (std::string)
-    //     4) brand (std::string)
-    //     5) need maintenance? (bool)
-    // 3 things it can do:
-    //     1) spin
-    //     2) absorb shock from bumps
-    //     3) support weight of rider
-};
-
-struct Brakes
-{
-    // 5 properties:
-    //     1) type (std::string)
-    //     2) brand (std::string)
-    //     3) material (std::string)
-    //     4) amount of pad left (int)
-    //     5) need maintenance? (bool)
-    // 3 things it can do:
-    //     1) stop the bike
-    //     2) slow the bike
-    //     3) squeak when needing to be replaced
-};
-
-struct Handlebars
-{
-    // 5 properties:
-    //     1) type (std::string)
-    //     2) material (std::string)
-    //     3) width (float)
-    //     4) brand (std::string)
-    //     5) need maintenance? (bool)
-    // 3 things it can do:
-    //     1) turn the bike
-    //     2) engage the brakes
-    //     3) shift the gears
-};
-
-struct Bicycle
-{
-    // 5 properties:
-    //     1) Gears (auto)
-    //     2) Frame (auto)
-    //     3) Wheel (auto)
-    //     4) Brakes (auto)
-    //     5) Handlebars (auto)
-    // 3 things it can do:
-    //     1) shift gears
-    //     2) pedal forward
-    //     3) brake
-};
-/*
-=================
-Part 1e - Step 4: Commit
-=================
-Now that you've made changes, make a commit!
-Be sure to make the commit message meaningful.
-*/
-}  //end namespace Part1E_Step3
-  
-namespace Part1E_Step5
-{
-/*
-=================
-Part 1e - Step 5: Assignment
-=================
-    - declare your member variables using camelCase versions of the plain-english properties
-    - give the member variables relevant data types and reasonable default values
-    - Do this for all 10 UDTs
- */
-struct CarWash 
-{
-    //number of vacuum cleaners                     
-    int numVacuumCleaners = 3; 
-    //number of eco-friendly cleaning supplies      
-    int numEcoFriendlyCleaningSupplies = 20;     
-    //stores the amount of water used per week.     
-    float waterUsedPerWeek = 200.f;            
-    //stores amount of profit made per week         
-    float profitPerWeek = 495.95f;               
-    //number of cars serviced per day               
-    int numberOfCarsServiced = 10;     
-    //3 things it can do:
-    //    - wash and wax car
-    //    - charge customer
-    //    - detail the car interior
-};
-
-struct Computer
-{
-    // amount of storage
-    float storageAmount = 30.31f;
-    // amount of RAM
-    int RAMAmount = 16;
-    // manufacturer name
-    std::string manufacturer = "Mac";
-    // size of screen
-    float screenSize = 13.1f;
-    // number of usb ports (int)
-    int amountUSBPort = 2;
-    // 3 things it can do:
-    //     1) connect to internet
-    //     2) save files
-    //     3) run apps
-};
-
-struct Car
-{
-    // engine size
-    float engineSize = 13.1f;
-    // make
-    std::string make = "Subaru";
-    // model
-    std::string model = "Outback";
-    // number of seats
-    int numberOfSeats = 5;
-    // average miles per gallon (float)
-    float averageMPG = 30.2f;
-    // 3 things it can do:
-    //     1) the car can move forward
-    //     2) the car can stop
-    //     3) the car can turn
-};
-
-struct Tree
-{
-    // height 
-    float height = 13.7f;
-    // age
-    int age = 23;
-    // type 
-    std::string type = "Maple";
-    // location
-    std::string location = "Backyard";
-    // number of branches (int)
-    int numberOfBranches = 10349;
-    // 3 things it can do:
-    //     1) grow
-    //     2) produce fruit
-    //     3) photosynthesize
-};
-
-struct Person
-{
-    // height
-    float height = 5.4f;
-    // age
-    int age = 29;
-    // number of siblings
-    int numberOfSiblings = 3;
-    // job
-    std::string job = "Driver";
-    // address
-    std::string address = "1 S Anywhere St";
-    // 3 things it can do:
-    //     1) run
-    //     2) jump
-    //     3) play piano
-};
-
-struct Gears
-{
-    // number of gears
-    int numberOfGears = 5;
-    // brand 
-    std::string brand = "Acme";
-    // type
-    std::string type = "Sproket";
-    // condition
-    std::string condition = "Good";
-    // need maintenance?
-    bool needmaintenance = false;
-    // 3 things it can do:
-    //     1) propel the bike
-    //     2) spin independently of wheel
-    //     3) shift gear ratio
-};
-
-struct Frame
-{
-    // weight
-    float weight = 3.7f;
-    // type
-    char type = 'A';
-    // material
-    std::string material = "Carbon Fiber";
-    // brand    
-    std::string brand = "Acme";
-    // need maintenance?
-    bool needmaintenance = false;
-    // 3 things it can do:
-    //     1) adjust seat height
-    //     2) absorb shock from bumps
-    //     3) support weight of rider
-};
-
-struct Wheel
-{
-    // circumference
-    float circumference = 30.2f;
-    // number of spokes
-    int numberOfSpokes = 25;
-    // material
-    std::string material = "Aluminum";
-    // brand
-    std::string brand = "Acme";
-    // need maintenance?
-    bool needmaintenance = false;
-    // 3 things it can do:
-    //     1) spin
-    //     2) absorb shock from bumps
-    //     3) support weight of rider
-};
-
-struct Brakes
-{
-    // type
-    char type = 'B';
-    // brand
-    std::string brand = "Acme";
-    // material
-    std::string material = "Rubber";
-    // amount of pad left
-    float padRemaining = 0.2f;
-    // need maintenance?
-    bool needmaintenance = true;
-    // 3 things it can do:
-    //     1) stop the bike
-    //     2) slow the bike
-    //     3) squeak when needing to be replaced
-};
-
-struct Handlebars
-{
-    // type
-    char type = 'D';
-    // material
-    std::string material = "Carbon Fiber";
-    // width
-    float width = 7.9f;
-    // brand
-    std::string brand = "Acme";
-    // need maintenance?
-    bool needmaintenance = false;
-    // 3 things it can do:
-    //     1) turn the bike
-    //     2) engage the brakes
-    //     3) shift the gears
-};
-
-struct Bicycle
-{
-    // Gears
-    struct Gears;
-    // Frame
-    struct Frame;
-    // Wheel
-    struct Wheel;
-    // Brakes
-    struct Brakes;
-    // Handlebars
-    struct Handlebars;
-    // 3 things it can do:
-    //     1) shift gears
-    //     2) pedal forward
-    //     3) brake
-};
-/*
-
-=================
-Part 1e - Step 6: Commit
-=================
-Now that you've made changes, make a commit!
-Be sure to make the commit message meaningful.
-*/
-}  //end namespace Part1E_Step5
-
-namespace Part1E_Step7
-{
-/*
-=================
-Part 1e - Step 7: Assignment
-=================
-  - declare your member functions underneath each plain-English comment in your struct's body.
-  - add function parameters where it makes sense to have them.
-  - if your functions return something other than 'void', add a comment explaining what is being returned.  see the example code below.
-  */
-struct CarWash 
-{
-    //number of vacuum cleaners                     
-    int numVacuumCleaners = 3; 
-    //number of eco-friendly cleaning supplies      
-    int numEcoFriendlyCleaningSupplies = 20;     
-    //stores the amount of water used per week.     
-    float waterUsedPerWeek = 200.f;            
-    //stores amount of profit made per week         
-    float profitPerWeek = 495.95f;               
-    //number of cars serviced per day               
-    int numberOfCarsServiced = 10;     
-    
-    //3 things it can do:
-    //wash and wax car
-    void washAndWaxCar(); 
-    
-    //charge customer       //NOTE: function parameter is relevant to the work that the function performs
-    float chargeCustomer(float discountPercentage); //returns the total amount charged.
-    
-    //detail the car interior
-    void detailInterior();
-};
 
 struct Computer
 {
@@ -1346,6 +869,119 @@ struct Bicycle
     void pedalForward();
     // 3) brake
     void brake();
+};
+/*
+=================
+Part 1e - Step 2: Commit
+=================
+Now that you've made changes, make a commit!
+Be sure to make the commit message meaningful.
+*/
+
+} //end namespace Part1E_Step1
+
+namespace Part1E_Step3
+{
+/*
+=================
+Part 1e - Step 3: Assignment
+=================
+    - Below your plain-English UDT, Copy your 5 properties & 3 actions into the empty struct body.
+    - comment them out.
+    - Do this for all 10 UDTs
+    */
+
+struct CarWash 
+{
+    //5 properties:
+    //    - number of vacuum cleaners
+    //    - number of eco-friendly cleaning supplies
+    //    - stores the amount of water used per week.
+    //    - stores amount of profit made per week
+    //    - number of cars serviced per day
+    //3 things it can do:
+    //    - wash and wax car
+    //    - charge customer
+    //    - detail the car interior
+};
+/*
+=================
+Part 1e - Step 4: Commit
+=================
+Now that you've made changes, make a commit!
+Be sure to make the commit message meaningful.
+*/
+}  //end namespace Part1E_Step3
+  
+namespace Part1E_Step5
+{
+/*
+=================
+Part 1e - Step 5: Assignment
+=================
+    - declare your member variables using camelCase versions of the plain-english properties
+    - give the member variables relevant data types and reasonable default values
+    - Do this for all 10 UDTs
+ */
+struct CarWash 
+{
+    //number of vacuum cleaners                     
+    int numVacuumCleaners = 3; 
+    //number of eco-friendly cleaning supplies      
+    int numEcoFriendlyCleaningSupplies = 20;     
+    //stores the amount of water used per week.     
+    float waterUsedPerWeek = 200.f;            
+    //stores amount of profit made per week         
+    float profitPerWeek = 495.95f;               
+    //number of cars serviced per day               
+    int numberOfCarsServiced = 10;     
+    //3 things it can do:
+    //    - wash and wax car
+    //    - charge customer
+    //    - detail the car interior
+};
+/*
+
+=================
+Part 1e - Step 6: Commit
+=================
+Now that you've made changes, make a commit!
+Be sure to make the commit message meaningful.
+*/
+}  //end namespace Part1E_Step5
+
+namespace Part1E_Step7
+{
+/*
+=================
+Part 1e - Step 7: Assignment
+=================
+  - declare your member functions underneath each plain-English comment in your struct's body.
+  - add function parameters where it makes sense to have them.
+  - if your functions return something other than 'void', add a comment explaining what is being returned.  see the example code below.
+  */
+struct CarWash 
+{
+    //number of vacuum cleaners                     
+    int numVacuumCleaners = 3; 
+    //number of eco-friendly cleaning supplies      
+    int numEcoFriendlyCleaningSupplies = 20;     
+    //stores the amount of water used per week.     
+    float waterUsedPerWeek = 200.f;            
+    //stores amount of profit made per week         
+    float profitPerWeek = 495.95f;               
+    //number of cars serviced per day               
+    int numberOfCarsServiced = 10;     
+    
+    //3 things it can do:
+    //wash and wax car
+    void washAndWaxCar(); 
+    
+    //charge customer       //NOTE: function parameter is relevant to the work that the function performs
+    float chargeCustomer(float discountPercentage); //returns the total amount charged.
+    
+    //detail the car interior
+    void detailInterior();
 };
 /*
 =================
