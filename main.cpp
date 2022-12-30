@@ -1152,12 +1152,25 @@ struct Tree
     // age
     int age = 23;
     // type 
-    std::string type = "Maple";
+    std::string type = "Apple";
     // location
     std::string location = "Backyard";
     // number of branches (int)
     int numberOfBranches = 10349;
 
+    // Nested UDT
+        struct Fruit
+        {
+            // member variables
+            std::string name= "Apple";
+            std::string color = "Green";
+            bool readyToEat = false;
+            int numberOfSeeds = 5;
+            // member functions
+            int produceSeeds(); // returns number of seeds produced
+            void fallFromTree();
+            void inspireTheoryOfGravity(); // did this actually happen with Newton?
+        };
     // 3 things it can do:
     // 1) grow
     int grow(int sunlight, int water); // returns growth amount
@@ -1180,6 +1193,20 @@ struct Person
     // address
     std::string address = "1 S Anywhere St";
 
+    // Nested UDT
+    struct Eye
+    {
+        // member variables
+        std::string color = "Blue";
+        bool needsGlasses = true;
+        bool hasCataracts = false;
+        std::string typeOfColorBlindness = "Blue/ green";
+        std::string vision = "20/50";
+        // member functions
+        void open();
+        void close();
+        void see(std::string vision, std::string typeOfColorBlindness);
+    };
     // 3 things it can do:
     // 1) run
     void run(int speed);
@@ -1382,77 +1409,6 @@ struct CarWash
     
     //detail the car interior
     void detailInterior();
-};
-
-struct Person
-{
-    // height
-    float height = 5.4f;
-    // age
-    int age = 29;
-    // number of siblings
-    int numberOfSiblings = 3;
-    // job
-    std::string job = "Driver";
-    // address
-    std::string address = "1 S Anywhere St";
-
-    // Nested UDT
-    struct Eye
-    {
-        // member variables
-        std::string color = "Blue";
-        bool needsGlasses = true;
-        bool hasCataracts = false;
-        std::string typeOfColorBlindness = "Blue/ green";
-        std::string vision = "20/50";
-        // member functions
-        void open();
-        void close();
-        void see(std::string vision, std::string typeOfColorBlindness);
-    };
-    // 3 things it can do:
-    // 1) run
-    void run(int speed);
-    // 2) jump
-    void jump(int height);
-    // 3) play piano
-    void playPiano(std::string piece);
-};
-
-struct Tree
-{
-    // height 
-    float height = 13.7f;
-    // age
-    int age = 23;
-    // type 
-    std::string type = "Apple";
-    // location
-    std::string location = "Backyard";
-    // number of branches (int)
-    int numberOfBranches = 10349;
-
-    // Nested UDT
-        struct Fruit
-        {
-            // member variables
-            std::string name= "Apple";
-            std::string color = "Green";
-            bool readyToEat = false;
-            int numberOfSeeds = 5;
-            // member functions
-            int produceSeeds(); // returns number of seeds produced
-            void fallFromTree();
-            void inspireTheoryOfGravity(); // did this actually happen with Newton?
-        };
-    // 3 things it can do:
-    // 1) grow
-    int grow(int sunlight, int water); // returns growth amount
-    // 2) produce fruit
-    void produceFruit();
-    // 3) photosynthesize
-    void photosynthesize();
 };
 /*
 =================
