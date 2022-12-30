@@ -682,23 +682,23 @@ struct Tree
     int numberOfBranches = 10349;
 
     // Nested UDT
-        struct Fruit
-        {
-            // member variables
-            std::string name= "Apple";
-            std::string color = "Green";
-            bool readyToEat = false;
-            int numberOfSeeds = 5;
-            // member functions
-            int produceSeeds(); // returns number of seeds produced
-            void fallFromTree();
-            void inspireTheoryOfGravity(); // did this actually happen with Newton?
-        };
+    struct Fruit
+    {
+        // member variables
+        std::string name= "Apple";
+        std::string color = "Green";
+        bool readyToEat = false;
+        int numberOfSeeds = 5;
+        // member functions
+        int produceSeeds(); // returns number of seeds produced
+        void fallFromTree();
+        void inspireTheoryOfGravity(); // did this actually happen with Newton?
+    };
     // 3 things it can do:
     // 1) grow
     int grow(int sunlight, int water); // returns growth amount
     // 2) produce fruit
-    void produceFruit();
+    Fruit produceFruit();
     // 3) photosynthesize
     void photosynthesize();
 };
