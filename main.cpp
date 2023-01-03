@@ -108,7 +108,17 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
-
+// I started this one but got stuck because I don't really understand what the question is asking
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    
+    void run(int howFast, bool startWithLeftFoot);
+};
 
 
 
@@ -133,256 +143,329 @@ struct CarWash
 
 struct Computer
 {
-    // amount of storage
     float storageAmount = 30.31f;
-    // amount of RAM
     int RAMAmount = 16;
-    // manufacturer name
     std::string manufacturer = "Mac";
-    // size of screen
     float screenSize = 13.1f;
-    // number of usb ports (int)
     int amountUSBPort = 2;
 
-    // 3 things it can do:
-    // 1) connect to internet
-    void connectToInternet();
-    // 2) save files
-    void save();
-    //     3) run apps
-    void runApp();
+    bool connectToInternet(bool paidISP = true);
+    bool save(std::string fileName, bool clickSaveButton);
+    bool runApp(bool doubleClick);
 };
+
+bool connectToInternet(bool paidISP = true)
+{
+    return paidISP ? true : false;
+}
+
+bool save(std::string fileName, bool clickSaveButton)
+{
+    return fileName != "" && clickSaveButton ? true : false;
+}
+
+bool runApp(bool doubleClick)
+{
+    return doubleClick ? true : false;
+}
 
 struct Car
 {
-    // engine size
     float engineSize = 13.1f;
-    // make
     std::string make = "Subaru";
-    // model
     std::string model = "Outback";
-    // number of seats
     int numberOfSeats = 5;
-    // average miles per gallon (float)
     float averageMPG = 30.2f;
 
-    // 3 things it can do:
-    // 1) the car can move forward
-    int moveForward(int distanceTraveled, int time); // returns speed
-    // 2) the car can stop
-    void stopMovement();
-    // 3) the car can turn
-    bool turn(); // return whether the car will turn or not
+    int moveForward(int distanceTraveled, int time);
+    bool stopMovement(bool applyBrakes);
+    bool turn(bool rotateSteeringWheel);
     
 };
 
-struct Tree
+int moveForward(int distanceTraveled, int time)
 {
-    // height 
+    return distanceTraveled / time;
+}
+
+bool stopMovement(bool applyBrakes)
+{
+    return applyBrakes ? true : false;
+}
+
+bool turn(bool rotateSteeringWheel)
+{
+   return rotateSteeringWheel ? true : false; 
+}
+
+struct Tree
+{ 
     float height = 13.7f;
-    // age
     int age = 23;
-    // type 
     std::string type = "Apple";
-    // location
     std::string location = "Backyard";
-    // number of branches (int)
     int numberOfBranches = 10349;
 
-    // Nested UDT
     struct Fruit
     {
-        // member variables
-        std::string name= "Apple";
+        std::string name = "Apple";
         std::string color = "Green";
         bool readyToEat = false;
         int numberOfSeeds = 5;
-        // member functions
-        int produceSeeds(); // returns number of seeds produced
+
+        int produceSeeds();
         void fallFromTree();
-        void inspireTheoryOfGravity(); // did this actually happen with Newton?
+        void inspireTheoryOfGravity();
     };
-    // 3 things it can do:
-    // 1) grow
-    int grow(int sunlight, int water); // returns growth amount
-    // 2) produce fruit
+
+    int grow(int sunLight, int water);
     Fruit produceFruit();
-    // 3) photosynthesize
-    void photosynthesize();
+    int photosynthesize(int sunLight, int water, int unkonwnFactor);
 };
 
-struct Person
+int grow(int sunLight, int water)
 {
-    // height
+    return sunLight * water;
+}
+// I couldn't quite figure out how to make this return a Fruit 
+// Tree::Fruit produceFruit(int grow)
+// {
+//      if (grow > 0)
+//      {
+//          return
+//             bool readyToEat = true;
+//      }
+//     else 
+//      {      
+//         return
+//             bool readyToEat = false;
+//     }
+// }
+
+int photosynthesize(int sunLight, int water, int unkonwnFactor)
+{
+    return (sunLight > 0) ? water * unkonwnFactor : 0;
+}
+
+struct myPerson
+{
     float height = 5.4f;
-    // age
     int age = 29;
-    // number of siblings
     int numberOfSiblings = 3;
-    // job
     std::string job = "Driver";
-    // address
     std::string address = "1 S Anywhere St";
 
-    // Nested UDT
     struct Eye
     {
-        // member variables
         std::string color = "Blue";
         bool needsGlasses = true;
         bool hasCataracts = false;
         std::string typeOfColorBlindness = "Blue/ green";
         std::string vision = "20/50";
-        // member functions
-        void open();
-        void close();
+
+        bool open(bool awake);
+        bool close(bool awake);
         void see(std::string vision, std::string typeOfColorBlindness);
     };
-    // 3 things it can do:
-    // 1) run
-    void run(int speed);
-    // 2) jump
-    void jump(int height);
-    // 3) play piano
-    void playPiano(std::string piece);
+
+    bool run(int speed);
+    int jump(int crouch, int energy);
+    bool playPiano(bool memoryRecal, int nerves);
 };
+
+bool run(int speed)
+{
+    return (speed > 5) ? true : false;
+}
+
+int jump(int crouch, int energy)
+{
+    return crouch * energy;
+}
+
+bool playPiano(bool memoryRecal, int nerves)
+{
+     return memoryRecal && nerves > 10 ? true : false; 
+}
+
+bool myPerson::Eye::open(bool awake)
+{
+    return awake ? true : false;
+}
+
+bool myPerson::Eye::close(bool awake)
+{
+    return awake == false ? true : false;
+}
+
+// void myPerson::Eye::see(std::string vision, std::string typeOfColorBlindness)
+// {
+        // I couldn't quite figure this one out.  Maybe I can get some pointers for my code review
+// }
 
 struct Gears
 {
-    // number of gears
     int numberOfGears = 5;
-    // brand 
     std::string brand = "Acme";
-    // type
     std::string type = "Sproket";
-    // condition
     std::string condition = "Good";
-    // need maintenance?
     bool needmaintenance = false;
 
-    // 3 things it can do:
-    // 1) propel the bike
-    void propelBike();
-    // 2) spin independently of wheel
-    void freeSpin();
-    // 3) shift gear ratio
-    int shiftGear(); // returns the current gear
+    int propelBike(bool pedal, int gearRatio, int pedalSpeed);
+    bool freeSpin(bool needmaintenance);
+    int shiftGear(int leftShifterValue, int rightShifterValue); 
 };
+
+int propelBike(bool pedal, int gearRatio, int pedalSpeed)
+{
+    return pedal ? gearRatio * pedalSpeed : 0;
+}
+
+bool freeSpin(bool needmaintenance)
+{
+    return needmaintenance ? false : true;
+}
+
+int shiftGear(int leftShifterValue, int rightShifterValue)
+{
+    return leftShifterValue * rightShifterValue;    
+}
 
 struct Frame
 {
-    // weight
     float weight = 3.7f;
-    // type
     char type = 'A';
-    // material
-    std::string material = "Carbon Fiber";
-    // brand    
+    std::string material = "Carbon Fiber"; 
     std::string brand = "Acme";
-    // need maintenance?
     bool needmaintenance = false;
 
-    // 3 things it can do:
-    // 1) adjust seat height
-    int adjustSeatHight(int riderHeight); // returns the height of the seat
-    // 2) absorb shock from bumps
-    void shockAbsorb();
-    // 3) support weight of rider
-    void supportWeight();
+    int adjustSeatHight(int riderHeight);
+    void shockAbsorbFrame(bool needmaintenance);
+    void supportWeight(bool needmaintenance);
 };
+
+int adjustSeatHeight(int riderHeight)
+{
+    return ((riderHeight / 70) + 2 ) * 3;
+}
+
+bool shockAbsorbFrame(bool needmaintenance)
+{
+    return needmaintenance ? false : true;
+}
+
+bool supportWeightFrame(bool needmaintenance)
+{
+    return needmaintenance ? false : true;
+}
 
 struct Wheel
 {
-    // circumference
     float circumference = 30.2f;
-    // number of spokes
     int numberOfSpokes = 25;
-    // material
     std::string material = "Aluminum";
-    // brand
     std::string brand = "Acme";
-    // need maintenance?
     bool needmaintenance = false;
 
-    // 3 things it can do:
-    // 1) spin
-    int spin(int speed); // returns spin duration 
-    // 2) absorb shock from bumps
-    void shockAbsorb();
-    // 3) support weight of rider
-    void supportWeight();
+    int spin(int speed); 
+    bool shockAbsorbWheel(bool needmaintenance);
+    bool supportWeightWheel(bool needmaintenance);
 };
+
+int spin(int speed, int distance)
+{
+    return speed * distance;
+}
+
+bool shockAbsorbWheel(bool needmaintenance)
+{
+    return needmaintenance ? false : true;
+}
+
+bool supportWeightWheel(bool needmaintenance)
+{
+    // should I write it like this or how it was above? I feel like this way is less confusing with the true value being first spot in the ternary opeator after the question mark.
+    return needmaintenance == false ? true : false;
+}
 
 struct Brakes
 {
-    // type
     char type = 'B';
-    // brand
     std::string brand = "Acme";
-    // material
     std::string material = "Rubber";
-    // amount of pad left
     float padRemaining = 0.2f;
-    // need maintenance?
     bool needmaintenance = true;
 
-    // 3 things it can do:
-    // 1) stop the bike
-    void stop();
-    // 2) slow the bike
-    void slow();
-    // 3) squeak when needing to be replaced
-    bool replaceSqueek(int padRemaining); // returns a boolean telling if the pads need replaced 
+    bool stop(bool needMaintence, int pressureApplied);
+    float slow(float pressureApplied);
+    bool replaceSqueek(float padRemaining);
 };
+
+bool stop(bool needMaintence, float pressureApplied)
+{
+    return (needMaintence == false && pressureApplied > 0) ? true : false; 
+}
+
+float slow(float pressureApplied)
+{
+    return pressureApplied * 0.2f;
+}
+
+bool replaceSqueek(float padRemaining)
+{
+    return (padRemaining < 0.5f) ? true : false;
+}
 
 struct Handlebars
 {
-    // type
     char type = 'D';
-    // material
     std::string material = "Carbon Fiber";
-    // width
     float width = 7.9f;
-    // brand
     std::string brand = "Acme";
-    // need maintenance?
-    bool needmaintenance = false;
+    bool needMaintenance = false;
 
-    // 3 things it can do:
-    // 1) turn the bike
-    bool turn(); // returns if the bike will turn or not
-    // 2) engage the brakes
-    bool engageBrakes();  // returns if the bike will brake or not
-    // 3) shift the gears
+    float turn(bool needMaintenance, float turnDegree); 
+    bool engageBrakes(bool needMaintence, float pressureApplied); 
     void shiftGears(int desiredGear);
 };
+
+float turn(bool needMaintenance, float turnDegree)
+{
+    return needMaintenance ? turnDegree : 0.0f;
+}
+
+bool engageBrakes(bool needMaintence, float pressureApplied)
+{
+    return (needMaintence == false && pressureApplied > 0.0f) ? true : false;
+}
 
 struct Bicycle
 {
-    // Gears
     Gears gears;
-    // Frame
     Frame frame;
-    // Wheel
     Wheel wheel;
-    // Brakes
     Brakes brakes;
-    // Handlebars
     Handlebars handlebars;
 
-    // 3 things it can do:
-    // 1) shift gears
-    void shiftGears(int desiredGear);
-    // 2) pedal forward
-    void pedalForward();
-    // 3) brake
-    void brake();
+    bool shiftGears(int desiredGear);
+    bool pedalForward(int pedalSpeed);
+    bool brake(int appliedPressure);
 };
 
+bool shiftGears(int desiredGear, int currentGear)
+{
+    return (desiredGear != currentGear) ? true : false;
+}
 
+bool pedalForward(int pedalSpeed)
+{
+    return pedalSpeed > 0 ? true : false;
+}
 
-
-
+bool brake(int appliedPressure)
+{
+    return appliedPressure > 0 ? true : false;
+}
 
 
 
