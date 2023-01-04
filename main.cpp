@@ -108,7 +108,6 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
-// I started this one but got stuck because I don't really understand what the question is asking
 struct Person
 {
     int age;
@@ -116,10 +115,43 @@ struct Person
     float hairLength;
     float GPA;
     unsigned int SATScore;
-    
+    int distanceTraveled;
+
+    struct Feet
+    {
+        int stepSize();
+        void stepForward();
+    };
+
+    Feet leftFoot, rightFoot;
+
     void run(int howFast, bool startWithLeftFoot);
 };
 
+int Person::Feet::stepSize()
+{
+    return 9;
+}
+
+void Person::Feet::stepForward()
+{
+
+}
+
+void Person::run(int howFast, bool startsWithLeftFoot)
+{
+    if(startsWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();    
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize() * howFast;
+}
 
 
  /*
@@ -149,22 +181,22 @@ struct Computer
     float screenSize = 13.1f;
     int amountUSBPort = 2;
 
-    bool connectToInternet(bool paidISP = true);
+    bool connectToInternet(bool paidISP);
     bool save(std::string fileName, bool clickSaveButton);
     bool runApp(bool doubleClick);
 };
 
-bool connectToInternet(bool paidISP = true)
+bool Computer::connectToInternet(bool paidISP = true)
 {
     return paidISP ? true : false;
 }
 
-bool save(std::string fileName, bool clickSaveButton)
+bool Computer::save(std::string fileName, bool clickSaveButton)
 {
     return fileName != "" && clickSaveButton ? true : false;
 }
 
-bool runApp(bool doubleClick)
+bool Computer::runApp(bool doubleClick)
 {
     return doubleClick ? true : false;
 }
@@ -183,17 +215,17 @@ struct Car
     
 };
 
-int moveForward(int distanceTraveled, int time)
+int Car::moveForward(int distanceTraveled, int time)
 {
     return distanceTraveled / time;
 }
 
-bool stopMovement(bool applyBrakes)
+bool Car::stopMovement(bool applyBrakes)
 {
     return applyBrakes ? true : false;
 }
 
-bool turn(bool rotateSteeringWheel)
+bool Car::turn(bool rotateSteeringWheel)
 {
    return rotateSteeringWheel ? true : false; 
 }
@@ -223,7 +255,7 @@ struct Tree
     int photosynthesize(int sunLight, int water, int unkonwnFactor);
 };
 
-int grow(int sunLight, int water)
+int Tree::grow(int sunLight, int water)
 {
     return sunLight * water;
 }
@@ -242,12 +274,12 @@ int grow(int sunLight, int water)
 //     }
 // }
 
-int photosynthesize(int sunLight, int water, int unkonwnFactor)
+int Tree::photosynthesize(int sunLight, int water, int unkonwnFactor)
 {
     return (sunLight > 0) ? water * unkonwnFactor : 0;
 }
 
-struct myPerson
+struct PersonTwo
 {
     float height = 5.4f;
     int age = 29;
@@ -273,27 +305,27 @@ struct myPerson
     bool playPiano(bool memoryRecal, int nerves);
 };
 
-bool run(int speed)
+bool PersonTwo::run(int speed)
 {
     return (speed > 5) ? true : false;
 }
 
-int jump(int crouch, int energy)
+int PersonTwo::jump(int crouch, int energy)
 {
     return crouch * energy;
 }
 
-bool playPiano(bool memoryRecal, int nerves)
+bool PersonTwo::playPiano(bool memoryRecal, int nerves)
 {
      return memoryRecal && nerves > 10 ? true : false; 
 }
 
-bool myPerson::Eye::open(bool awake)
+bool PersonTwo::Eye::open(bool awake)
 {
     return awake ? true : false;
 }
 
-bool myPerson::Eye::close(bool awake)
+bool PersonTwo::Eye::close(bool awake)
 {
     return awake == false ? true : false;
 }
@@ -309,24 +341,24 @@ struct Gears
     std::string brand = "Acme";
     std::string type = "Sproket";
     std::string condition = "Good";
-    bool needmaintenance = false;
+    bool needMaintenance = false;
 
     int propelBike(bool pedal, int gearRatio, int pedalSpeed);
-    bool freeSpin(bool needmaintenance);
+    bool freeSpin(bool needMaintenance);
     int shiftGear(int leftShifterValue, int rightShifterValue); 
 };
 
-int propelBike(bool pedal, int gearRatio, int pedalSpeed)
+int Gears::propelBike(bool pedal, int gearRatio, int pedalSpeed)
 {
     return pedal ? gearRatio * pedalSpeed : 0;
 }
 
-bool freeSpin(bool needmaintenance)
+bool Gears::freeSpin(bool needmaintenanceGears)
 {
-    return needmaintenance ? false : true;
+    return needmaintenanceGears ? false : true;
 }
 
-int shiftGear(int leftShifterValue, int rightShifterValue)
+int Gears::shiftGear(int leftShifterValue, int rightShifterValue)
 {
     return leftShifterValue * rightShifterValue;    
 }
@@ -337,26 +369,26 @@ struct Frame
     char type = 'A';
     std::string material = "Carbon Fiber"; 
     std::string brand = "Acme";
-    bool needmaintenance = false;
+    bool needMaintenance = false;
 
-    int adjustSeatHight(int riderHeight);
-    void shockAbsorbFrame(bool needmaintenance);
-    void supportWeight(bool needmaintenance);
+    int adjustSeatHeight(int riderHeight);
+    bool shockAbsorbFrame(bool needMaintenance);
+    bool supportWeight(bool needMaintenance);
 };
 
-int adjustSeatHeight(int riderHeight)
+int Frame::adjustSeatHeight(int riderHeight)
 {
     return ((riderHeight / 70) + 2 ) * 3;
 }
 
-bool shockAbsorbFrame(bool needmaintenance)
+bool Frame::shockAbsorbFrame(bool needMaintenanceFrame)
 {
-    return needmaintenance ? false : true;
+    return needMaintenanceFrame ? false : true;
 }
 
-bool supportWeightFrame(bool needmaintenance)
+bool Frame::supportWeight(bool needMaintenanceFrame)
 {
-    return needmaintenance ? false : true;
+    return needMaintenanceFrame ? false : true;
 }
 
 struct Wheel
@@ -365,27 +397,27 @@ struct Wheel
     int numberOfSpokes = 25;
     std::string material = "Aluminum";
     std::string brand = "Acme";
-    bool needmaintenance = false;
+    bool needMaintenance = false;
 
-    int spin(int speed); 
-    bool shockAbsorbWheel(bool needmaintenance);
-    bool supportWeightWheel(bool needmaintenance);
+    int spin(int speed, int distance); 
+    bool shockAbsorbWheel(bool needMaintenance);
+    bool supportWeightWheel(bool needMaintenance);
 };
 
-int spin(int speed, int distance)
+int Wheel::spin(int speed, int distance)
 {
     return speed * distance;
 }
 
-bool shockAbsorbWheel(bool needmaintenance)
+bool Wheel::shockAbsorbWheel(bool needMaintenanceWheel)
 {
-    return needmaintenance ? false : true;
+    return needMaintenanceWheel ? false : true;
 }
 
-bool supportWeightWheel(bool needmaintenance)
+bool Wheel::supportWeightWheel(bool needMaintenanceWheel)
 {
     // should I write it like this or how it was above? I feel like this way is less confusing with the true value being first spot in the ternary opeator after the question mark.
-    return needmaintenance == false ? true : false;
+    return needMaintenanceWheel == false ? true : false;
 }
 
 struct Brakes
@@ -394,30 +426,31 @@ struct Brakes
     std::string brand = "Acme";
     std::string material = "Rubber";
     float padRemaining = 0.2f;
-    bool needmaintenance = true;
+    bool needMaintenance = true;
 
-    bool stop(bool needMaintence, int pressureApplied);
+    bool stop(bool needMaintence, float pressureApplied);
     float slow(float pressureApplied);
     bool replaceSqueek(float padRemaining);
 };
 
-bool stop(bool needMaintence, float pressureApplied)
+bool Brakes::stop(bool needMaintenceBrakes, float pressureApplied)
 {
-    return (needMaintence == false && pressureApplied > 0) ? true : false; 
+    return (needMaintenceBrakes == false && pressureApplied > 0) ? true : false; 
 }
 
-float slow(float pressureApplied)
+float Brakes::slow(float pressureApplied)
 {
     return pressureApplied * 0.2f;
 }
 
-bool replaceSqueek(float padRemaining)
+bool Brakes::replaceSqueek(float myPadRemaining)
 {
-    return (padRemaining < 0.5f) ? true : false;
+    return (myPadRemaining < 0.5f) ? true : false;
 }
 
 struct Handlebars
 {
+    int currentGear = 4;
     char type = 'D';
     std::string material = "Carbon Fiber";
     float width = 7.9f;
@@ -429,14 +462,19 @@ struct Handlebars
     void shiftGears(int desiredGear);
 };
 
-float turn(bool needMaintenance, float turnDegree)
+float Handlebars::turn(bool needMaintenanceHandlebars, float turnDegree)
 {
-    return needMaintenance ? turnDegree : 0.0f;
+    return needMaintenanceHandlebars ? turnDegree : 0.0f;
 }
 
-bool engageBrakes(bool needMaintence, float pressureApplied)
+bool Handlebars::engageBrakes(bool needMaintenanceHandlebars, float pressureApplied)
 {
-    return (needMaintence == false && pressureApplied > 0.0f) ? true : false;
+    return (needMaintenanceHandlebars == false && pressureApplied > 0.0f) ? true : false;
+}
+
+void Handlebars::shiftGears(int desiredGear)
+{
+    currentGear = desiredGear;
 }
 
 struct Bicycle
@@ -447,22 +485,22 @@ struct Bicycle
     Brakes brakes;
     Handlebars handlebars;
 
-    bool shiftGears(int desiredGear);
+    bool shiftGears(int desiredGear, int currentGear);
     bool pedalForward(int pedalSpeed);
     bool brake(int appliedPressure);
 };
 
-bool shiftGears(int desiredGear, int currentGear)
+bool Bicycle::shiftGears(int desiredGear, int currentGear)
 {
     return (desiredGear != currentGear) ? true : false;
 }
 
-bool pedalForward(int pedalSpeed)
+bool Bicycle::pedalForward(int pedalSpeed)
 {
     return pedalSpeed > 0 ? true : false;
 }
 
-bool brake(int appliedPressure)
+bool Bicycle::brake(int appliedPressure)
 {
     return appliedPressure > 0 ? true : false;
 }
