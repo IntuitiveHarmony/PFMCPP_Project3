@@ -153,7 +153,6 @@ void Person::run(int howFast, bool startsWithLeftFoot)
     distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize() * howFast;
 }
 
-
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
     If you have 'unused parameter' warnings, you aren't using one of your function parameters in your implementation.
@@ -260,19 +259,21 @@ int Tree::grow(int sunLight, int water)
     return sunLight * water;
 }
 // I couldn't quite figure out how to make this return a Fruit 
-// Tree::Fruit produceFruit(int grow)
-// {
-//      if (grow > 0)
-//      {
-//          return
-//             bool readyToEat = true;
-//      }
-//     else 
-//      {      
-//         return
-//             bool readyToEat = false;
-//     }
-// }
+Tree::Fruit produceFruit(int grow)
+{
+     if (grow > 0)
+     {
+        Tree::Fruit fruit;
+        fruit.readyToEat = true;
+        return fruit;
+     }
+    else 
+     {      
+        Tree::Fruit fruit;
+        fruit.readyToEat = false;
+        return fruit;
+    }
+}
 
 int Tree::photosynthesize(int sunLight, int water, int unkonwnFactor)
 {
@@ -297,7 +298,7 @@ struct PersonTwo
 
         bool open(bool awake);
         bool close(bool awake);
-        void see(std::string vision, std::string typeOfColorBlindness);
+        void see();
     };
 
     bool run(int speed);
@@ -330,10 +331,12 @@ bool PersonTwo::Eye::close(bool awake)
     return awake == false ? true : false;
 }
 
-// void myPerson::Eye::see(std::string vision, std::string typeOfColorBlindness)
-// {
+void PersonTwo::Eye::see()
+{
         // I couldn't quite figure this one out.  Maybe I can get some pointers for my code review
-// }
+        // I want the function to have the person see based on the relevant attributes of the eye struct
+}
+
 
 struct Gears
 {
@@ -411,13 +414,12 @@ int Wheel::spin(int speed, int distance)
 
 bool Wheel::shockAbsorbWheel(bool needMaintenanceWheel)
 {
-    return needMaintenanceWheel ? false : true;
+    return ! needMaintenanceWheel;
 }
 
 bool Wheel::supportWeightWheel(bool needMaintenanceWheel)
 {
-    // should I write it like this or how it was above? I feel like this way is less confusing with the true value being first spot in the ternary opeator after the question mark.
-    return needMaintenanceWheel == false ? true : false;
+    return ! needMaintenanceWheel;
 }
 
 struct Brakes
@@ -435,7 +437,12 @@ struct Brakes
 
 bool Brakes::stop(bool needMaintenceBrakes, float pressureApplied)
 {
-    return (needMaintenceBrakes == false && pressureApplied > 0) ? true : false; 
+    if(needMaintenceBrakes == false && pressureApplied > 0)
+    {
+        return true;
+    }   
+    
+    return false; 
 }
 
 float Brakes::slow(float pressureApplied)
@@ -469,7 +476,12 @@ float Handlebars::turn(bool needMaintenanceHandlebars, float turnDegree)
 
 bool Handlebars::engageBrakes(bool needMaintenanceHandlebars, float pressureApplied)
 {
-    return (needMaintenanceHandlebars == false && pressureApplied > 0.0f) ? true : false;
+    if(needMaintenanceHandlebars == false && pressureApplied > 0.0f)
+    {
+        return true;
+    }
+    
+    return false;
 }
 
 void Handlebars::shiftGears(int desiredGear)
