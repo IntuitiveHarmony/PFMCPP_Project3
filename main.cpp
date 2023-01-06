@@ -258,21 +258,21 @@ int Tree::grow(int sunLight, int water)
 {
     return sunLight * water;
 }
-// I couldn't quite figure out how to make this return a Fruit 
+// Here it is a bit DRYer
 Tree::Fruit produceFruit(int grow)
 {
-     if (grow > 0)
-     {
-        Tree::Fruit fruit;
-        fruit.readyToEat = true;
-        return fruit;
-     }
-    else 
-     {      
-        Tree::Fruit fruit;
-        fruit.readyToEat = false;
-        return fruit;
+    Tree::Fruit fruit;
+    
+    if (grow > 0)
+    {
+        fruit.readyToEat = true;    
     }
+    else 
+    {      
+        fruit.readyToEat = false;
+    }
+    
+    return fruit;
 }
 
 int Tree::photosynthesize(int sunLight, int water, int unkonwnFactor)
@@ -333,8 +333,18 @@ bool PersonTwo::Eye::close(bool awake)
 
 void PersonTwo::Eye::see()
 {
-        // I couldn't quite figure this one out.  Maybe I can get some pointers for my code review
-        // I want the function to have the person see based on the relevant attributes of the eye struct
+    // if(vision == "20/20")
+    // {
+    //     needsGlasses = false;
+    // }
+    // else
+    // {
+    //     needsGlasses = true;
+    // }
+    
+    // I wrote out both to see how they looked side by side.
+    
+    vision == "20/20" ? needsGlasses == false : needsGlasses = true;
 }
 
 
