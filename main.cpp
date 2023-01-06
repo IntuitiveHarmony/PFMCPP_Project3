@@ -108,9 +108,50 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
 
+    struct Feet
+    {
+        int stepSize();
+        void stepForward();
+    };
 
+    Feet leftFoot, rightFoot;
 
+    void run(int howFast, bool startWithLeftFoot);
+};
+
+int Person::Feet::stepSize()
+{
+    return 9;
+}
+
+void Person::Feet::stepForward()
+{
+
+}
+
+void Person::run(int howFast, bool startsWithLeftFoot)
+{
+    if(startsWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();    
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize() * howFast;
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -133,256 +174,358 @@ struct CarWash
 
 struct Computer
 {
-    // amount of storage
     float storageAmount = 30.31f;
-    // amount of RAM
     int RAMAmount = 16;
-    // manufacturer name
     std::string manufacturer = "Mac";
-    // size of screen
     float screenSize = 13.1f;
-    // number of usb ports (int)
     int amountUSBPort = 2;
 
-    // 3 things it can do:
-    // 1) connect to internet
-    void connectToInternet();
-    // 2) save files
-    void save();
-    //     3) run apps
-    void runApp();
+    bool connectToInternet(bool paidISP);
+    bool save(std::string fileName, bool clickSaveButton);
+    bool runApp(bool doubleClick);
 };
+
+bool Computer::connectToInternet(bool paidISP = true)
+{
+    return paidISP ? true : false;
+}
+
+bool Computer::save(std::string fileName, bool clickSaveButton)
+{
+    return fileName != "" && clickSaveButton ? true : false;
+}
+
+bool Computer::runApp(bool doubleClick)
+{
+    return doubleClick ? true : false;
+}
 
 struct Car
 {
-    // engine size
     float engineSize = 13.1f;
-    // make
     std::string make = "Subaru";
-    // model
     std::string model = "Outback";
-    // number of seats
     int numberOfSeats = 5;
-    // average miles per gallon (float)
     float averageMPG = 30.2f;
 
-    // 3 things it can do:
-    // 1) the car can move forward
-    int moveForward(int distanceTraveled, int time); // returns speed
-    // 2) the car can stop
-    void stopMovement();
-    // 3) the car can turn
-    bool turn(); // return whether the car will turn or not
+    int moveForward(int distanceTraveled, int time);
+    bool stopMovement(bool applyBrakes);
+    bool turn(bool rotateSteeringWheel);
     
 };
 
-struct Tree
+int Car::moveForward(int distanceTraveled, int time)
 {
-    // height 
+    return distanceTraveled / time;
+}
+
+bool Car::stopMovement(bool applyBrakes)
+{
+    return applyBrakes ? true : false;
+}
+
+bool Car::turn(bool rotateSteeringWheel)
+{
+    return rotateSteeringWheel ? true : false; 
+}
+
+struct Tree
+{ 
     float height = 13.7f;
-    // age
     int age = 23;
-    // type 
     std::string type = "Apple";
-    // location
     std::string location = "Backyard";
-    // number of branches (int)
     int numberOfBranches = 10349;
 
-    // Nested UDT
     struct Fruit
     {
-        // member variables
-        std::string name= "Apple";
+        std::string name = "Apple";
         std::string color = "Green";
         bool readyToEat = false;
         int numberOfSeeds = 5;
-        // member functions
-        int produceSeeds(); // returns number of seeds produced
+
+        int produceSeeds();
         void fallFromTree();
-        void inspireTheoryOfGravity(); // did this actually happen with Newton?
+        void inspireTheoryOfGravity();
     };
-    // 3 things it can do:
-    // 1) grow
-    int grow(int sunlight, int water); // returns growth amount
-    // 2) produce fruit
+
+    int grow(int sunLight, int water);
     Fruit produceFruit();
-    // 3) photosynthesize
-    void photosynthesize();
+    int photosynthesize(int sunLight, int water, int unkonwnFactor);
 };
 
-struct Person
+int Tree::grow(int sunLight, int water)
 {
-    // height
+    return sunLight * water;
+}
+// Here it is a bit DRYer
+Tree::Fruit produceFruit(int grow)
+{
+    Tree::Fruit fruit;
+    
+    if (grow > 0)
+    {
+        fruit.readyToEat = true;    
+    }
+    else 
+    {      
+        fruit.readyToEat = false;
+    }
+    
+    return fruit;
+}
+
+int Tree::photosynthesize(int sunLight, int water, int unkonwnFactor)
+{
+    return (sunLight > 0) ? water * unkonwnFactor : 0;
+}
+
+struct PersonTwo
+{
     float height = 5.4f;
-    // age
     int age = 29;
-    // number of siblings
     int numberOfSiblings = 3;
-    // job
     std::string job = "Driver";
-    // address
     std::string address = "1 S Anywhere St";
 
-    // Nested UDT
     struct Eye
     {
-        // member variables
         std::string color = "Blue";
         bool needsGlasses = true;
         bool hasCataracts = false;
         std::string typeOfColorBlindness = "Blue/ green";
         std::string vision = "20/50";
-        // member functions
-        void open();
-        void close();
-        void see(std::string vision, std::string typeOfColorBlindness);
+
+        bool open(bool awake);
+        bool close(bool awake);
+        void see();
     };
-    // 3 things it can do:
-    // 1) run
-    void run(int speed);
-    // 2) jump
-    void jump(int height);
-    // 3) play piano
-    void playPiano(std::string piece);
+
+    bool run(int speed);
+    int jump(int crouch, int energy);
+    bool playPiano(bool memoryRecal, int nerves);
 };
+
+bool PersonTwo::run(int speed)
+{
+    return (speed > 5) ? true : false;
+}
+
+int PersonTwo::jump(int crouch, int energy)
+{
+    return crouch * energy;
+}
+
+bool PersonTwo::playPiano(bool memoryRecal, int nerves)
+{
+    return memoryRecal && nerves > 10 ? true : false; 
+}
+
+bool PersonTwo::Eye::open(bool awake)
+{
+    return awake ? true : false;
+}
+
+bool PersonTwo::Eye::close(bool awake)
+{
+    return awake == false ? true : false;
+}
+
+void PersonTwo::Eye::see()
+{
+    // if(vision == "20/20")
+    // {
+    //     needsGlasses = false;
+    // }
+    // else
+    // {
+    //     needsGlasses = true;
+    // }
+    
+    // I wrote out both to see how they looked side by side.
+    
+    needsGlasses = vision == "20/20" ? false : true;
+}
+
 
 struct Gears
 {
-    // number of gears
     int numberOfGears = 5;
-    // brand 
     std::string brand = "Acme";
-    // type
     std::string type = "Sproket";
-    // condition
     std::string condition = "Good";
-    // need maintenance?
-    bool needmaintenance = false;
+    bool needMaintenance = false;
 
-    // 3 things it can do:
-    // 1) propel the bike
-    void propelBike();
-    // 2) spin independently of wheel
-    void freeSpin();
-    // 3) shift gear ratio
-    int shiftGear(); // returns the current gear
+    int propelBike(bool pedal, int gearRatio, int pedalSpeed);
+    bool freeSpin(bool needMaintenance);
+    int shiftGear(int leftShifterValue, int rightShifterValue); 
 };
+
+int Gears::propelBike(bool pedal, int gearRatio, int pedalSpeed)
+{
+    return pedal ? gearRatio * pedalSpeed : 0;
+}
+
+bool Gears::freeSpin(bool needmaintenanceGears)
+{
+    return needmaintenanceGears ? false : true;
+}
+
+int Gears::shiftGear(int leftShifterValue, int rightShifterValue)
+{
+    return leftShifterValue * rightShifterValue;    
+}
 
 struct Frame
 {
-    // weight
     float weight = 3.7f;
-    // type
     char type = 'A';
-    // material
-    std::string material = "Carbon Fiber";
-    // brand    
+    std::string material = "Carbon Fiber"; 
     std::string brand = "Acme";
-    // need maintenance?
-    bool needmaintenance = false;
+    bool needMaintenance = false;
 
-    // 3 things it can do:
-    // 1) adjust seat height
-    int adjustSeatHight(int riderHeight); // returns the height of the seat
-    // 2) absorb shock from bumps
-    void shockAbsorb();
-    // 3) support weight of rider
-    void supportWeight();
+    int adjustSeatHeight(int riderHeight);
+    bool shockAbsorbFrame(bool needMaintenance);
+    bool supportWeight(bool needMaintenance);
 };
+
+int Frame::adjustSeatHeight(int riderHeight)
+{
+    return ((riderHeight / 70) + 2 ) * 3;
+}
+
+bool Frame::shockAbsorbFrame(bool needMaintenanceFrame)
+{
+    return needMaintenanceFrame ? false : true;
+}
+
+bool Frame::supportWeight(bool needMaintenanceFrame)
+{
+    return needMaintenanceFrame ? false : true;
+}
 
 struct Wheel
 {
-    // circumference
     float circumference = 30.2f;
-    // number of spokes
     int numberOfSpokes = 25;
-    // material
     std::string material = "Aluminum";
-    // brand
     std::string brand = "Acme";
-    // need maintenance?
-    bool needmaintenance = false;
+    bool needMaintenance = false;
 
-    // 3 things it can do:
-    // 1) spin
-    int spin(int speed); // returns spin duration 
-    // 2) absorb shock from bumps
-    void shockAbsorb();
-    // 3) support weight of rider
-    void supportWeight();
+    int spin(int speed, int distance); 
+    bool shockAbsorbWheel(bool needMaintenance);
+    bool supportWeightWheel(bool needMaintenance);
 };
+
+int Wheel::spin(int speed, int distance)
+{
+    return speed * distance;
+}
+
+bool Wheel::shockAbsorbWheel(bool needMaintenanceWheel)
+{
+    return ! needMaintenanceWheel;
+}
+
+bool Wheel::supportWeightWheel(bool needMaintenanceWheel)
+{
+    return ! needMaintenanceWheel;
+}
 
 struct Brakes
 {
-    // type
     char type = 'B';
-    // brand
     std::string brand = "Acme";
-    // material
     std::string material = "Rubber";
-    // amount of pad left
     float padRemaining = 0.2f;
-    // need maintenance?
-    bool needmaintenance = true;
+    bool needMaintenance = true;
 
-    // 3 things it can do:
-    // 1) stop the bike
-    void stop();
-    // 2) slow the bike
-    void slow();
-    // 3) squeak when needing to be replaced
-    bool replaceSqueek(int padRemaining); // returns a boolean telling if the pads need replaced 
+    bool stop(bool needMaintence, float pressureApplied);
+    float slow(float pressureApplied);
+    bool replaceSqueek(float padRemaining);
 };
+
+bool Brakes::stop(bool needMaintenceBrakes, float pressureApplied)
+{
+    if(needMaintenceBrakes == false && pressureApplied > 0)
+    {
+        return true;
+    }   
+    
+    return false; 
+}
+
+float Brakes::slow(float pressureApplied)
+{
+    return pressureApplied * 0.2f;
+}
+
+bool Brakes::replaceSqueek(float myPadRemaining)
+{
+    return (myPadRemaining < 0.5f) ? true : false;
+}
 
 struct Handlebars
 {
-    // type
+    int currentGear = 4;
     char type = 'D';
-    // material
     std::string material = "Carbon Fiber";
-    // width
     float width = 7.9f;
-    // brand
     std::string brand = "Acme";
-    // need maintenance?
-    bool needmaintenance = false;
+    bool needMaintenance = false;
 
-    // 3 things it can do:
-    // 1) turn the bike
-    bool turn(); // returns if the bike will turn or not
-    // 2) engage the brakes
-    bool engageBrakes();  // returns if the bike will brake or not
-    // 3) shift the gears
+    float turn(bool needMaintenance, float turnDegree); 
+    bool engageBrakes(bool needMaintence, float pressureApplied); 
     void shiftGears(int desiredGear);
 };
+
+float Handlebars::turn(bool needMaintenanceHandlebars, float turnDegree)
+{
+    return needMaintenanceHandlebars ? turnDegree : 0.0f;
+}
+
+bool Handlebars::engageBrakes(bool needMaintenanceHandlebars, float pressureApplied)
+{
+    if(needMaintenanceHandlebars == false && pressureApplied > 0.0f)
+    {
+        return true;
+    }
+    
+    return false;
+}
+
+void Handlebars::shiftGears(int desiredGear)
+{
+    currentGear = desiredGear;
+}
 
 struct Bicycle
 {
-    // Gears
     Gears gears;
-    // Frame
     Frame frame;
-    // Wheel
     Wheel wheel;
-    // Brakes
     Brakes brakes;
-    // Handlebars
     Handlebars handlebars;
 
-    // 3 things it can do:
-    // 1) shift gears
-    void shiftGears(int desiredGear);
-    // 2) pedal forward
-    void pedalForward();
-    // 3) brake
-    void brake();
+    bool shiftGears(int desiredGear, int currentGear);
+    bool pedalForward(int pedalSpeed);
+    bool brake(int appliedPressure);
 };
 
+bool Bicycle::shiftGears(int desiredGear, int currentGear)
+{
+    return (desiredGear != currentGear) ? true : false;
+}
 
+bool Bicycle::pedalForward(int pedalSpeed)
+{
+    return pedalSpeed > 0 ? true : false;
+}
 
-
-
+bool Bicycle::brake(int appliedPressure)
+{
+    return appliedPressure > 0 ? true : false;
+}
 
 
 
