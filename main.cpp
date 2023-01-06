@@ -226,7 +226,7 @@ bool Car::stopMovement(bool applyBrakes)
 
 bool Car::turn(bool rotateSteeringWheel)
 {
-   return rotateSteeringWheel ? true : false; 
+    return rotateSteeringWheel ? true : false; 
 }
 
 struct Tree
@@ -318,7 +318,7 @@ int PersonTwo::jump(int crouch, int energy)
 
 bool PersonTwo::playPiano(bool memoryRecal, int nerves)
 {
-     return memoryRecal && nerves > 10 ? true : false; 
+    return memoryRecal && nerves > 10 ? true : false; 
 }
 
 bool PersonTwo::Eye::open(bool awake)
@@ -344,7 +344,7 @@ void PersonTwo::Eye::see()
     
     // I wrote out both to see how they looked side by side.
     
-    vision == "20/20" ? needsGlasses == false : needsGlasses = true;
+    needsGlasses = vision == "20/20" ? false : true;
 }
 
 
