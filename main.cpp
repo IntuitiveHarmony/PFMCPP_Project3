@@ -228,11 +228,13 @@ void Tree::Fruit::produceSeeds()
     //     srand(time(0));
     //     ~~~~~ ^~~~~~~
     
-    // Originally I had:
-    // srand(time(0));
+    // When I run this it give me the same number ever time I run the program.  I want it to give me a new random number each time:
+    // srand(5);
     
-    srand(static_cast<unsigned int> (time(nullptr)));
-    numberOfSeeds = (rand() % (10 - 1 + 1)) + 1;
+    srand(time(nullptr));
+    int low = 1;
+    int high = 10;
+    numberOfSeeds = (rand() % (high - low + 1)) + low;
 }
 
 void Tree::Fruit::fallFromTree()
