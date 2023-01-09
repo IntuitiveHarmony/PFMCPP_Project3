@@ -36,7 +36,6 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <time.h>
 namespace Example 
 {
 struct UDT  // my user defined type named 'UDT'
@@ -177,8 +176,8 @@ struct Tree
     };
 
     void grow();
-    Fruit produceFruit(int grow);
-    int photosynthesize(int sunLight, int water, int unkonwnFactor);
+    Fruit produceFruit(int grow = 7);
+    int photosynthesize(int sunLight = 5, int water = 3, int unkonwnFactor = 7);
 };
 
 Tree::Tree()
@@ -196,7 +195,7 @@ void Tree::grow()
     std::cout << "All is well in the shade of the apple tree" << std::endl;
 }
 
-Tree::Fruit Tree::produceFruit(int grow = 7)
+Tree::Fruit Tree::produceFruit(int grow)
 {
     Tree::Fruit fruit;
     
@@ -212,29 +211,15 @@ Tree::Fruit Tree::produceFruit(int grow = 7)
     return fruit;
 }
 
-int Tree::photosynthesize(int sunLight = 5, int water = 3, int unkonwnFactor = 7)
+int Tree::photosynthesize(int sunLight, int water, int unkonwnFactor)
 {
     return (sunLight > 0) ? water * unkonwnFactor : 0;
 }
 
 void Tree::Fruit::produceSeeds()
 {
-    // I was able to figure out the random number for the seeds.  I don't know what a cast is and why it needed to be added. I added line 234 after a lot of tinkering with stack overflow threads to fix the following two errors:
-    // main.cpp:224:16: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-    //     srand(time(0));
-    //                ^
-    //                nullptr
-    // main.cpp:224:11: warning: implicit conversion loses integer precision: 'time_t' (aka 'long') to 'unsigned int' [-Wshorten-64-to-32]
-    //     srand(time(0));
-    //     ~~~~~ ^~~~~~~
-    
-    // When I run this it give me the same number ever time I run the program.  I want it to give me a new random number each time:
-    // srand(5);
-    
-    srand(time(nullptr));
-    int low = 1;
-    int high = 10;
-    numberOfSeeds = (rand() % (high - low + 1)) + low;
+    srand(1);
+    numberOfSeeds = rand() % 10;
 }
 
 void Tree::Fruit::fallFromTree()
@@ -320,17 +305,6 @@ bool PersonTwo::Eye::close(bool awake)
 
 void PersonTwo::Eye::see()
 {
-    // if(vision == "20/20")
-    // {
-    //     needsGlasses = false;
-    // }
-    // else
-    // {
-    //     needsGlasses = true;
-    // }
-    
-    // I wrote out both to see how they looked side by side.
-    
     needsGlasses = vision == "20/20" ? false : true;
 }
 
