@@ -260,7 +260,7 @@ struct PersonTwo
     bool run(int speed = 7);
     int jump(int crouch = 9, int energy = 4);
     bool playPiano(bool memoryRecal = true, int nerves = 11);
-    void face();
+    void printFace();
 };
 
 PersonTwo::PersonTwo()
@@ -288,7 +288,7 @@ bool PersonTwo::playPiano(bool memoryRecal, int nerves)
     return memoryRecal && nerves > 10 ? true : false; 
 }
 
-void PersonTwo::face()
+void PersonTwo::printFace()
 {
     std::cout << "(o_*)" << std::endl;
 }
@@ -357,7 +357,7 @@ struct Frame
     bool needMaintenance = false;
 
     void adjustSeatHeight(int riderHeight);
-    bool shockAbsorbFrame(bool needMaintenance);
+    bool shockAbsorb(bool needMaintenance);
     bool supportWeight(bool needMaintenance);
 };
 
@@ -371,7 +371,7 @@ void Frame::adjustSeatHeight(int riderHeight)
     std::cout << "Seat Height: " << ((riderHeight / 70) + 2 ) * 3 << "\n";
 }
 
-bool Frame::shockAbsorbFrame(bool needMaintenanceFrame)
+bool Frame::shockAbsorb(bool needMaintenanceFrame)
 {
     return needMaintenanceFrame ? false : true;
 }
@@ -393,8 +393,8 @@ struct Wheel
     bool needMaintenance = true;
 
     int spin(int speed, int distance); 
-    bool shockAbsorbWheel(bool needMaintenance);
-    bool supportWeightWheel(bool needMaintenance);
+    bool shockAbsorb(bool needMaintenance);
+    bool supportWeight(bool needMaintenance);
 };
 
 Wheel::Wheel()
@@ -408,12 +408,12 @@ int Wheel::spin(int speed, int distance)
     return speed * distance;
 }
 
-bool Wheel::shockAbsorbWheel(bool needMaintenanceWheel)
+bool Wheel::shockAbsorb(bool needMaintenanceWheel)
 {
     return ! needMaintenanceWheel;
 }
 
-bool Wheel::supportWeightWheel(bool needMaintenanceWheel)
+bool Wheel::supportWeight(bool needMaintenanceWheel)
 {
     return ! needMaintenanceWheel;
 }
@@ -580,7 +580,7 @@ int main()
     personTwo.run();
     personTwo.jump();
     personTwo.playPiano();
-    personTwo.face();
+    personTwo.printFace();
     PersonTwo::Eye eye;
     eye.open();
     eye.close();
@@ -595,14 +595,14 @@ int main()
     
     Frame frame;
     frame.adjustSeatHeight(4);
-    frame.shockAbsorbFrame(false);
+    frame.shockAbsorb(false);
     frame.supportWeight(false);
     std::cout << "Is the frame sound? " << (frame.needMaintenance ? "No" : "Yes") << "\n\n";
 
     Wheel wheel;
     wheel.spin(10, 60);
-    wheel.shockAbsorbWheel(true);
-    wheel.supportWeightWheel(true);
+    wheel.shockAbsorb(true);
+    wheel.supportWeight(true);
     std::cout << "Is the wheel sound? " << (wheel.needMaintenance ? "No" : "Yes") << "\n\n";
 
     Brakes brakes;
