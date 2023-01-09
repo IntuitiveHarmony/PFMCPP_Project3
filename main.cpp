@@ -98,12 +98,12 @@ bool Computer::connectToInternet(bool paidISP = true)
     return paidISP ? true : false;
 }
 
-bool Computer::save(std::string fileName = "Sweet Cat Video", bool clickSaveButton = true)
+bool Computer::save(std::string fileName, bool clickSaveButton)
 {
     return fileName != "" && clickSaveButton ? true : false;
 }
 
-void Computer::runApp(std::string text = "App is running")
+void Computer::runApp(std::string text)
 {
     std::cout << text << std::endl;
 }
@@ -130,18 +130,18 @@ Car::Car()
     std::cout << "Car being constructed!" << std::endl; 
 }
 
-int Car::moveForward(int distanceTraveled = 60, int time = 4)
+int Car::moveForward(int distanceTraveled, int time)
 {
     std::cout << distanceTraveled / time << std::endl;
     return distanceTraveled / time;
 }
 
-bool Car::stopMovement(bool applyBrakes = false)
+bool Car::stopMovement(bool applyBrakes)
 {
     return applyBrakes ? true : false;
 }
 
-bool Car::turn(bool rotateSteeringWheel = true)
+bool Car::turn(bool rotateSteeringWheel)
 {
     return rotateSteeringWheel ? true : false; 
 }
@@ -176,7 +176,7 @@ struct Tree
     };
 
     void grow();
-    Fruit produceFruit();
+    Fruit produceFruit(int grow);
     int photosynthesize(int sunLight, int water, int unkonwnFactor);
 };
 
@@ -196,7 +196,7 @@ void Tree::grow()
     std::cout << "All is well in the shade of the apple tree" << std::endl;
 }
 
-Tree::Fruit produceFruit(int grow = 7)
+Tree::Fruit Tree::produceFruit(int grow = 7)
 {
     Tree::Fruit fruit;
     
@@ -252,14 +252,14 @@ struct PersonTwo
         std::string typeOfColorBlindness = "Blue/ green";
         std::string vision = "20/50";
 
-        bool open(bool awake);
-        bool close(bool awake);
+        bool open(bool awake = true);
+        bool close(bool awake = true);
         void see();
     };
 
-    bool run(int speed);
-    int jump(int crouch, int energy);
-    bool playPiano(bool memoryRecal, int nerves);
+    bool run(int speed = 7);
+    int jump(int crouch = 9, int energy = 4);
+    bool playPiano(bool memoryRecal = true, int nerves = 11);
     void face();
 };
 
@@ -273,17 +273,17 @@ PersonTwo::Eye::Eye()
     std::cout << "The eye is being constructed!" << std::endl;
 }
 
-bool PersonTwo::run(int speed = 7)
+bool PersonTwo::run(int speed)
 {
     return (speed > 5) ? true : false;
 }
 
-int PersonTwo::jump(int crouch = 9, int energy = 4)
+int PersonTwo::jump(int crouch, int energy)
 {
     return crouch * energy;
 }
 
-bool PersonTwo::playPiano(bool memoryRecal = true, int nerves = 11)
+bool PersonTwo::playPiano(bool memoryRecal, int nerves)
 {
     return memoryRecal && nerves > 10 ? true : false; 
 }
@@ -293,12 +293,12 @@ void PersonTwo::face()
     std::cout << "(o_*)" << std::endl;
 }
 
-bool PersonTwo::Eye::open(bool awake = true)
+bool PersonTwo::Eye::open(bool awake)
 {
     return awake ? true : false;
 }
 
-bool PersonTwo::Eye::close(bool awake = true)
+bool PersonTwo::Eye::close(bool awake)
 {
     return awake == false ? true : false;
 }
@@ -564,14 +564,14 @@ int main()
     
     Computer computer;
     computer.connectToInternet();
-    computer.save();
-    computer.runApp();
+    computer.save("Sweet Cat Video", true);
+    computer.runApp("App is running");
     std::cout << "Is the RAM higher than 8? " << (computer.RAMAmount > 8 ? "Yes" : "No") << "\n\n";
     
     Car car;
-    car.moveForward();
-    car.stopMovement();
-    car.turn();
+    car.moveForward(60, 4);
+    car.stopMovement(true);
+    car.turn(false);
     car.honk();
     std::cout << "Does it have 5 seats? " << (car.numberOfSeats >= 5 ? "Yes" : "No") << "\n\n";
     
@@ -582,7 +582,7 @@ int main()
         // main.cpp:(.text+0x16e2): undefined reference to `Tree::produceFruit()'
         // clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
         // exit status 1
-    // tree.produceFruit();
+    tree.produceFruit();
     tree.photosynthesize();
     std::cout << "The tree is " << tree.height << " feet tall and has " << tree.numberOfBranches << " branches! \n";
     
