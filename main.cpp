@@ -35,6 +35,7 @@
  */
 
 #include <iostream>
+#include <cstdlib>
 namespace Example 
 {
 struct UDT  // my user defined type named 'UDT'
@@ -75,6 +76,7 @@ int main()
 
 struct Computer
 {
+    Computer();
     float storageAmount = 30.31f;
     int RAMAmount = 16;
     std::string manufacturer = "Mac";
@@ -83,8 +85,13 @@ struct Computer
 
     bool connectToInternet(bool paidISP);
     bool save(std::string fileName, bool clickSaveButton);
-    bool runApp(bool doubleClick);
+    void runApp(std::string something);
 };
+
+Computer::Computer()
+{
+    std::cout << "Computer being constructed!" << std::endl; 
+}
 
 bool Computer::connectToInternet(bool paidISP = true)
 {
@@ -96,13 +103,16 @@ bool Computer::save(std::string fileName, bool clickSaveButton)
     return fileName != "" && clickSaveButton ? true : false;
 }
 
-bool Computer::runApp(bool doubleClick)
+void Computer::runApp(std::string text)
 {
-    return doubleClick ? true : false;
+    std::cout << text << std::endl;
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 struct Car
 {
+    Car();
     float engineSize = 13.1f;
     std::string make = "Subaru";
     std::string model = "Outback";
@@ -112,11 +122,17 @@ struct Car
     int moveForward(int distanceTraveled, int time);
     bool stopMovement(bool applyBrakes);
     bool turn(bool rotateSteeringWheel);
-    
+    void honk();
 };
+
+Car::Car()
+{
+    std::cout << "Car being constructed!" << std::endl; 
+}
 
 int Car::moveForward(int distanceTraveled, int time)
 {
+    std::cout << distanceTraveled / time << std::endl;
     return distanceTraveled / time;
 }
 
@@ -130,8 +146,16 @@ bool Car::turn(bool rotateSteeringWheel)
     return rotateSteeringWheel ? true : false; 
 }
 
+void Car::honk()
+{
+    std::cout << "Beep, Beep" << std::endl;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 struct Tree
 { 
+    Tree();
     float height = 13.7f;
     int age = 23;
     std::string type = "Apple";
@@ -140,27 +164,38 @@ struct Tree
 
     struct Fruit
     {
+        Fruit();
         std::string name = "Apple";
         std::string color = "Green";
         bool readyToEat = false;
-        int numberOfSeeds = 5;
+        int numberOfSeeds = 0;
 
-        int produceSeeds();
+        void produceSeeds();
         void fallFromTree();
         void inspireTheoryOfGravity();
     };
 
-    int grow(int sunLight, int water);
-    Fruit produceFruit();
-    int photosynthesize(int sunLight, int water, int unkonwnFactor);
+    void grow();
+    Fruit produceFruit(int grow = 7);
+    int photosynthesize(int sunLight = 5, int water = 3, int unkonwnFactor = 7);
 };
 
-int Tree::grow(int sunLight, int water)
+Tree::Tree()
 {
-    return sunLight * water;
+    std::cout << "Tree being constructed!" << std::endl;
 }
-// Here it is a bit DRYer
-Tree::Fruit produceFruit(int grow)
+
+Tree::Fruit::Fruit()
+{
+    std::cout << "Fruit being constructed!" << std::endl;
+}
+
+void Tree::grow()
+{
+    std::cout << "All is well in the shade of the apple tree" << std::endl;
+}
+
+Tree::Fruit Tree::produceFruit(int grow)
 {
     Tree::Fruit fruit;
     
@@ -181,8 +216,27 @@ int Tree::photosynthesize(int sunLight, int water, int unkonwnFactor)
     return (sunLight > 0) ? water * unkonwnFactor : 0;
 }
 
+void Tree::Fruit::produceSeeds()
+{
+    srand(1);
+    numberOfSeeds = rand() % 10;
+}
+
+void Tree::Fruit::fallFromTree()
+{
+    std::cout << "yum!" << std::endl;
+}
+
+void Tree::Fruit::inspireTheoryOfGravity()
+{
+    std::cout << "Eureka!" << std::endl;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 struct PersonTwo
 {
+    PersonTwo();
     float height = 5.4f;
     int age = 29;
     int numberOfSiblings = 3;
@@ -191,21 +245,33 @@ struct PersonTwo
 
     struct Eye
     {
+        Eye();
         std::string color = "Blue";
         bool needsGlasses = true;
         bool hasCataracts = false;
         std::string typeOfColorBlindness = "Blue/ green";
         std::string vision = "20/50";
 
-        bool open(bool awake);
-        bool close(bool awake);
+        bool open(bool awake = true);
+        bool close(bool awake = true);
         void see();
     };
 
-    bool run(int speed);
-    int jump(int crouch, int energy);
-    bool playPiano(bool memoryRecal, int nerves);
+    bool run(int speed = 7);
+    int jump(int crouch = 9, int energy = 4);
+    bool playPiano(bool memoryRecal = true, int nerves = 11);
+    void printFace();
 };
+
+PersonTwo::PersonTwo()
+{
+    std::cout << "PersonTwo being constructed!" << std::endl; 
+}
+
+PersonTwo::Eye::Eye()
+{
+    std::cout << "The eye is being constructed!" << std::endl;
+}
 
 bool PersonTwo::run(int speed)
 {
@@ -222,6 +288,11 @@ bool PersonTwo::playPiano(bool memoryRecal, int nerves)
     return memoryRecal && nerves > 10 ? true : false; 
 }
 
+void PersonTwo::printFace()
+{
+    std::cout << "(o_*)" << std::endl;
+}
+
 bool PersonTwo::Eye::open(bool awake)
 {
     return awake ? true : false;
@@ -234,23 +305,14 @@ bool PersonTwo::Eye::close(bool awake)
 
 void PersonTwo::Eye::see()
 {
-    // if(vision == "20/20")
-    // {
-    //     needsGlasses = false;
-    // }
-    // else
-    // {
-    //     needsGlasses = true;
-    // }
-    
-    // I wrote out both to see how they looked side by side.
-    
     needsGlasses = vision == "20/20" ? false : true;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 struct Gears
 {
+    Gears();
     int numberOfGears = 5;
     std::string brand = "Acme";
     std::string type = "Sproket";
@@ -262,6 +324,11 @@ struct Gears
     int shiftGear(int leftShifterValue, int rightShifterValue); 
 };
 
+Gears::Gears()
+{
+    std::cout << "Gears being constructed!" << std::endl; 
+}
+
 int Gears::propelBike(bool pedal, int gearRatio, int pedalSpeed)
 {
     return pedal ? gearRatio * pedalSpeed : 0;
@@ -269,6 +336,7 @@ int Gears::propelBike(bool pedal, int gearRatio, int pedalSpeed)
 
 bool Gears::freeSpin(bool needmaintenanceGears)
 {
+    std::cout << "Clanka clanka Clanka clanka Clanka clanka \n";
     return needmaintenanceGears ? false : true;
 }
 
@@ -277,25 +345,33 @@ int Gears::shiftGear(int leftShifterValue, int rightShifterValue)
     return leftShifterValue * rightShifterValue;    
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 struct Frame
 {
+    Frame();
     float weight = 3.7f;
     char type = 'A';
     std::string material = "Carbon Fiber"; 
     std::string brand = "Acme";
     bool needMaintenance = false;
 
-    int adjustSeatHeight(int riderHeight);
-    bool shockAbsorbFrame(bool needMaintenance);
+    void adjustSeatHeight(int riderHeight);
+    bool shockAbsorb(bool needMaintenance);
     bool supportWeight(bool needMaintenance);
 };
 
-int Frame::adjustSeatHeight(int riderHeight)
+Frame::Frame()
 {
-    return ((riderHeight / 70) + 2 ) * 3;
+    std::cout << "Frame being constructed!" << std::endl; 
 }
 
-bool Frame::shockAbsorbFrame(bool needMaintenanceFrame)
+void Frame::adjustSeatHeight(int riderHeight)
+{
+    std::cout << "Seat Height: " << ((riderHeight / 70) + 2 ) * 3 << "\n";
+}
+
+bool Frame::shockAbsorb(bool needMaintenanceFrame)
 {
     return needMaintenanceFrame ? false : true;
 }
@@ -305,36 +381,48 @@ bool Frame::supportWeight(bool needMaintenanceFrame)
     return needMaintenanceFrame ? false : true;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 struct Wheel
 {
+    Wheel();
     float circumference = 30.2f;
     int numberOfSpokes = 25;
     std::string material = "Aluminum";
     std::string brand = "Acme";
-    bool needMaintenance = false;
+    bool needMaintenance = true;
 
     int spin(int speed, int distance); 
-    bool shockAbsorbWheel(bool needMaintenance);
-    bool supportWeightWheel(bool needMaintenance);
+    bool shockAbsorb(bool needMaintenance);
+    bool supportWeight(bool needMaintenance);
 };
+
+Wheel::Wheel()
+{
+    std::cout << "Wheel being constructed!" << std::endl; 
+}
 
 int Wheel::spin(int speed, int distance)
 {
+    std::cout << speed * distance << "\n";
     return speed * distance;
 }
 
-bool Wheel::shockAbsorbWheel(bool needMaintenanceWheel)
+bool Wheel::shockAbsorb(bool needMaintenanceWheel)
 {
     return ! needMaintenanceWheel;
 }
 
-bool Wheel::supportWeightWheel(bool needMaintenanceWheel)
+bool Wheel::supportWeight(bool needMaintenanceWheel)
 {
     return ! needMaintenanceWheel;
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 struct Brakes
 {
+    Brakes();
     char type = 'B';
     std::string brand = "Acme";
     std::string material = "Rubber";
@@ -345,6 +433,11 @@ struct Brakes
     float slow(float pressureApplied);
     bool replaceSqueek(float padRemaining);
 };
+
+Brakes::Brakes()
+{
+    std::cout << "Brakes being constructed!" << std::endl; 
+}
 
 bool Brakes::stop(bool needMaintenceBrakes, float pressureApplied)
 {
@@ -358,6 +451,8 @@ bool Brakes::stop(bool needMaintenceBrakes, float pressureApplied)
 
 float Brakes::slow(float pressureApplied)
 {
+    if(needMaintenance)
+        std::cout << "SSKKKKRRREEEEEEEE \n";
     return pressureApplied * 0.2f;
 }
 
@@ -366,8 +461,11 @@ bool Brakes::replaceSqueek(float myPadRemaining)
     return (myPadRemaining < 0.5f) ? true : false;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 struct Handlebars
 {
+    Handlebars();
     int currentGear = 4;
     char type = 'D';
     std::string material = "Carbon Fiber";
@@ -379,6 +477,11 @@ struct Handlebars
     bool engageBrakes(bool needMaintence, float pressureApplied); 
     void shiftGears(int desiredGear);
 };
+
+Handlebars::Handlebars()
+{
+    std::cout << "Handlebars being constructed!" << std::endl; 
+}
 
 float Handlebars::turn(bool needMaintenanceHandlebars, float turnDegree)
 {
@@ -397,11 +500,15 @@ bool Handlebars::engageBrakes(bool needMaintenanceHandlebars, float pressureAppl
 
 void Handlebars::shiftGears(int desiredGear)
 {
+    std::cout << "CLICK \n";
     currentGear = desiredGear;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 struct Bicycle
 {
+    Bicycle();
     Gears gears;
     Frame frame;
     Wheel wheel;
@@ -411,7 +518,13 @@ struct Bicycle
     bool shiftGears(int desiredGear, int currentGear);
     bool pedalForward(int pedalSpeed);
     bool brake(int appliedPressure);
+    void ringBell();
 };
+
+Bicycle::Bicycle()
+{
+    std::cout << "Bicycle being constructed!" << std::endl; 
+}
 
 bool Bicycle::shiftGears(int desiredGear, int currentGear)
 {
@@ -427,12 +540,89 @@ bool Bicycle::brake(int appliedPressure)
 {
     return appliedPressure > 0 ? true : false;
 }
+void Bicycle::ringBell()
+{
+    std::cout << "Ding, Ding \n";
+}
 
-
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 int main()
 {
-    Example::main();
+    // Example::main();
+    
+    Computer computer;
+    computer.connectToInternet();
+    computer.save("Sweet Cat Video", true);
+    computer.runApp("App is running");
+    std::cout << "Is the RAM higher than 8? " << (computer.RAMAmount > 8 ? "Yes" : "No") << "\n\n";
+    
+    Car car;
+    car.moveForward(60, 4);
+    car.stopMovement(true);
+    car.turn(false);
+    car.honk();
+    std::cout << "Does it have 5 seats? " << (car.numberOfSeats >= 5 ? "Yes" : "No") << "\n\n";
+    
+    Tree tree;
+    tree.grow();
+    tree.produceFruit();
+    tree.photosynthesize();
+    std::cout << "The tree is " << tree.height << " feet tall and has " << tree.numberOfBranches << " branches! \n";
+    
+    Tree::Fruit fruit;
+    fruit.produceSeeds();
+    fruit.fallFromTree();
+    fruit.inspireTheoryOfGravity();
+    std::cout << "Does the apple have more than 4 seeds? " << (fruit.numberOfSeeds > 4 ? "Yes, it has " : "No, it only has ") << fruit.numberOfSeeds << (fruit.numberOfSeeds == 1 ? " seed. \n\n" : " seeds. \n\n");
+
+    PersonTwo personTwo;
+    personTwo.run();
+    personTwo.jump();
+    personTwo.playPiano();
+    personTwo.printFace();
+    PersonTwo::Eye eye;
+    eye.open();
+    eye.close();
+    eye.see();
+    std::cout << "Is the person awake? Will they play the Piano? " << (eye.open() ? "Yes" : "No") << " and " << (eye.open() && personTwo.playPiano() ? "Yes" : "No") << "\n\n";
+
+    Gears gears;
+    gears.propelBike(true, 5, 5);
+    gears.freeSpin(false);
+    gears.shiftGear(2, 4);
+    std::cout << "Do the gears need maintenance? " << (gears.needMaintenance ? "Yes" : "No") << "\n\n";
+    
+    Frame frame;
+    frame.adjustSeatHeight(4);
+    frame.shockAbsorb(false);
+    frame.supportWeight(false);
+    std::cout << "Is the frame sound? " << (frame.needMaintenance ? "No" : "Yes") << "\n\n";
+
+    Wheel wheel;
+    wheel.spin(10, 60);
+    wheel.shockAbsorb(true);
+    wheel.supportWeight(true);
+    std::cout << "Is the wheel sound? " << (wheel.needMaintenance ? "No" : "Yes") << "\n\n";
+
+    Brakes brakes;
+    brakes.stop(false, 3.5f);
+    brakes.slow(4.7f);
+    brakes.replaceSqueek(0.2f);
+    std::cout << "Do the brakes need replaced? " << (brakes.replaceSqueek(0.2f) ? "Yes" : "No") << "\n\n";
+
+    Handlebars handlebars;
+    handlebars.turn(false, 0.3f);
+    handlebars.engageBrakes(false, 3.7f);
+    handlebars.shiftGears(5);
+    std::cout << "Do the handlebars need maintenance? " << (handlebars.needMaintenance ? "Yes" : "No") << "\n\n";
+
+    Bicycle bicycle;
+    bicycle.shiftGears(2, 5);
+    bicycle.pedalForward(5);
+    bicycle.brake(4);
+    bicycle.ringBell();
+    std::cout << "\n";
     
     std::cout << "good to go!" << std::endl;
 }
