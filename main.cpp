@@ -36,6 +36,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <time.h>
 namespace Example 
 {
 struct UDT  // my user defined type named 'UDT'
@@ -187,7 +188,6 @@ Tree::Tree()
 
 Tree::Fruit::Fruit()
 {
-    numberOfSeeds = 5;
     std::cout << "Fruit being constructed!" << std::endl;
 }
 
@@ -219,7 +219,20 @@ int Tree::photosynthesize(int sunLight = 5, int water = 3, int unkonwnFactor = 7
 
 void Tree::Fruit::produceSeeds()
 {
-   // I was going to have it generate a random number of seeds but that proved to be more difficult than I thought it would be
+    // I was able to figure out the random number for the seeds.  I don't know what a cast is and why it needed to be added. I added line 234 after a lot of tinkering with stack overflow threads to fix the following two errors:
+    // main.cpp:224:16: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
+    //     srand(time(0));
+    //                ^
+    //                nullptr
+    // main.cpp:224:11: warning: implicit conversion loses integer precision: 'time_t' (aka 'long') to 'unsigned int' [-Wshorten-64-to-32]
+    //     srand(time(0));
+    //     ~~~~~ ^~~~~~~
+    
+    // Originally I had:
+    // srand(time(0));
+    
+    srand(static_cast<unsigned int> (time(nullptr)));
+    numberOfSeeds = (rand() % (10 - 1 + 1)) + 1;
 }
 
 void Tree::Fruit::fallFromTree()
@@ -577,20 +590,15 @@ int main()
     
     Tree tree;
     tree.grow();
-    // This produceFruit is giving me issues again.  I do not understand the error it produces when I run it:
-        // in function `main':
-        // main.cpp:(.text+0x16e2): undefined reference to `Tree::produceFruit()'
-        // clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
-        // exit status 1
     tree.produceFruit();
     tree.photosynthesize();
     std::cout << "The tree is " << tree.height << " feet tall and has " << tree.numberOfBranches << " branches! \n";
     
     Tree::Fruit fruit;
-    fruit.fallFromTree();
     fruit.produceSeeds();
+    fruit.fallFromTree();
     fruit.inspireTheoryOfGravity();
-    std::cout << "Does the apple have more than 4 seeds? " << (fruit.numberOfSeeds > 4 ? "Yes" : "No") << "\n\n";
+    std::cout << "Does the apple have more than 4 seeds? " << (fruit.numberOfSeeds > 4 ? "Yes, it has " : "No, it only has ") << fruit.numberOfSeeds << (fruit.numberOfSeeds == 1 ? " seed. \n\n" : " seeds. \n\n");
 
     PersonTwo personTwo;
     personTwo.run();
