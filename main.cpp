@@ -43,12 +43,14 @@ int main()
 
 struct Computer
 {
+    
+    float storageAmount = {0};
+    int RAMAmount = {0};
+    std::string manufacturer = {""};
+    float screenSize = {0.0f};
+    int amountUSBPort = {0};
+    
     Computer();
-    float storageAmount = 30.31f;
-    int RAMAmount = 16;
-    std::string manufacturer = "Mac";
-    float screenSize = 13.1f;
-    int amountUSBPort = 2;
 
     bool connectToInternet(bool paidISP);
     bool save(std::string fileName, bool clickSaveButton);
@@ -72,7 +74,7 @@ bool Computer::save(std::string fileName, bool clickSaveButton)
 
 void Computer::runApp(std::string text)
 {
-    std::cout << text << std::endl;
+    std::cout << text << " on " << RAMAmount << " GB of RAM" << std::endl;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,9 +94,14 @@ struct Car
     void honk();
 };
 
-Car::Car()
+Car::Car() :
+engineSize(0),
+make(""),
+model(""),
+numberOfSeats(0),
+averageMPG(0)
 {
-    std::cout << "Car being constructed!" << std::endl; 
+  std::cout << "Car being constructed!" << std::endl;
 }
 
 int Car::moveForward(int distanceTraveled, int time)
@@ -115,27 +122,29 @@ bool Car::turn(bool rotateSteeringWheel)
 
 void Car::honk()
 {
-    std::cout << "Beep, Beep" << std::endl;
+    std::cout << "Beep, Beep! \nHere are some of the initial values of the car member variables: \nEnginesize: " << engineSize  << "\nMake: " << make << "\nModel: " << model << std::endl;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 struct Tree
 { 
+    float height = {0.0f};
+    int age = {0};
+    std::string type = {""};
+    std::string location = {""};
+    int numberOfBranches = {0};
+
     Tree();
-    float height = 13.7f;
-    int age = 23;
-    std::string type = "Apple";
-    std::string location = "Backyard";
-    int numberOfBranches = 10349;
 
     struct Fruit
     {
+        std::string name = {""};
+        std::string color = {""};
+        bool readyToEat = {false};
+        int numberOfSeeds = {0};
+        
         Fruit();
-        std::string name = "Apple";
-        std::string color = "Green";
-        bool readyToEat = false;
-        int numberOfSeeds = 0;
 
         void produceSeeds();
         void fallFromTree();
@@ -154,7 +163,7 @@ Tree::Tree()
 
 Tree::Fruit::Fruit()
 {
-    std::cout << "Fruit being constructed!" << std::endl;
+    std::cout << "Fruit being constructed! \nRight now it has " << numberOfSeeds << " seeds." << std::endl;
 }
 
 void Tree::grow()
@@ -203,21 +212,23 @@ void Tree::Fruit::inspireTheoryOfGravity()
 
 struct PersonTwo
 {
+    float height = {0.0f};
+    int age = {0};
+    int numberOfSiblings = {0};
+    std::string job = {""};
+    std::string address = {""};
+
     PersonTwo();
-    float height = 5.4f;
-    int age = 29;
-    int numberOfSiblings = 3;
-    std::string job = "Driver";
-    std::string address = "1 S Anywhere St";
 
     struct Eye
     {
+        std::string color = {""};
+        bool needsGlasses = {false};
+        bool hasCataracts = {false};
+        std::string typeOfColorBlindness = {""};
+        std::string vision = {""};
+
         Eye();
-        std::string color = "Blue";
-        bool needsGlasses = true;
-        bool hasCataracts = false;
-        std::string typeOfColorBlindness = "Blue/ green";
-        std::string vision = "20/50";
 
         bool open(bool awake = true);
         bool close(bool awake = true);
@@ -291,7 +302,12 @@ struct Gears
     int shiftGear(int leftShifterValue, int rightShifterValue); 
 };
 
-Gears::Gears()
+Gears::Gears() :
+numberOfGears(0),
+brand(""),
+type(""),
+condition(""),
+needMaintenance(false)
 {
     std::cout << "Gears being constructed!" << std::endl; 
 }
@@ -303,6 +319,7 @@ int Gears::propelBike(bool pedal, int gearRatio, int pedalSpeed)
 
 bool Gears::freeSpin(bool needmaintenanceGears)
 {
+    std::cout << "Initial number of gears: " << numberOfGears << std::endl;
     std::cout << "Clanka clanka Clanka clanka Clanka clanka \n";
     return needmaintenanceGears ? false : true;
 }
@@ -316,12 +333,13 @@ int Gears::shiftGear(int leftShifterValue, int rightShifterValue)
 
 struct Frame
 {
+    float weight = {0.0f};
+    char type = {'A'};
+    std::string material = {""}; 
+    std::string brand = {""};
+    bool needMaintenance = {false};
+
     Frame();
-    float weight = 3.7f;
-    char type = 'A';
-    std::string material = "Carbon Fiber"; 
-    std::string brand = "Acme";
-    bool needMaintenance = false;
 
     void adjustSeatHeight(int riderHeight);
     bool shockAbsorb(bool needMaintenance);
@@ -352,12 +370,13 @@ bool Frame::supportWeight(bool needMaintenanceFrame)
 
 struct Wheel
 {
+    float circumference = {0.0f};
+    int numberOfSpokes = {0};
+    std::string material = {""};
+    std::string brand = {""};
+    bool needMaintenance = {false};
+
     Wheel();
-    float circumference = 30.2f;
-    int numberOfSpokes = 25;
-    std::string material = "Aluminum";
-    std::string brand = "Acme";
-    bool needMaintenance = true;
 
     int spin(int speed, int distance); 
     bool shockAbsorb(bool needMaintenance);
@@ -389,12 +408,13 @@ bool Wheel::supportWeight(bool needMaintenanceWheel)
 
 struct Brakes
 {
+    char type = {'A'};
+    std::string brand = {""};
+    std::string material = {"Rubber"};
+    float padRemaining = {1.0f};
+    bool needMaintenance = {false};
+
     Brakes();
-    char type = 'B';
-    std::string brand = "Acme";
-    std::string material = "Rubber";
-    float padRemaining = 0.2f;
-    bool needMaintenance = true;
 
     bool stop(bool needMaintence, float pressureApplied);
     float slow(float pressureApplied);
@@ -432,13 +452,14 @@ bool Brakes::replaceSqueek(float myPadRemaining)
 
 struct Handlebars
 {
+    int currentGear = {0};
+    char type = {'A'};
+    std::string material = {""};
+    float width = {0.0f};
+    std::string brand = {""};
+    bool needMaintenance = {false};
+
     Handlebars();
-    int currentGear = 4;
-    char type = 'D';
-    std::string material = "Carbon Fiber";
-    float width = 7.9f;
-    std::string brand = "Acme";
-    bool needMaintenance = false;
 
     float turn(bool needMaintenance, float turnDegree); 
     bool engageBrakes(bool needMaintence, float pressureApplied); 
