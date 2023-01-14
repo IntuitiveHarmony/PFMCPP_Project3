@@ -111,7 +111,7 @@ void Computer::runApp(std::string text)
 
 void Computer::runFizzBuzz(int max)
 {
-    for(int i = 1; i <= max; i++)
+    for(int i = 1; i <= max; ++i)
     {
          if(i % 3 == 0 && i % 5 ==0)
          {
@@ -243,7 +243,7 @@ Tree::Fruit::Fruit()
 void Tree::grow(int water)
 {
     std::cout << "All is well in the shade of the apple tree" << std::endl;
-    for(int i = 0; i < water; i++)
+    for(int i = 0; i < water; ++i)
     {
         height += 0.1f;
         numberOfBranches += 3;
@@ -290,7 +290,7 @@ void Tree::Fruit::inspireTheoryOfGravity()
 void Tree::Fruit::sweeten(int water)
 {
     float sweetness = 0.0f;
-    for(int i = 0; i < water; i++)
+    for(int i = 0; i < water; ++i)
     {
        sweetness += 0.3f;     
     }
@@ -357,7 +357,7 @@ bool PersonTwo::playPiano(bool memoryRecal, int nerves)
 
 void PersonTwo::printFace(int numOfHeads)
 {
-    for(int i = 0; i < numOfHeads; i++)
+    for(int i = 0; i < numOfHeads; ++i)
     {
         std::cout << "(o_*) ";
     }
@@ -430,7 +430,7 @@ bool Gears::freeSpin(bool needmaintenanceGears, int speed)
 {
     std::cout << "Initial number of gears: " << numberOfGears << std::endl;
 
-    for(int i = 0; i <= speed; i++)
+    for(int i = 0; i <= speed; ++i)
         {
             if(i == speed)
             {
@@ -545,7 +545,7 @@ bool Wheel::supportWeight(bool needMaintenanceWheel)
 
 void Wheel::glide(int bump)
 {
-     for(int i = 0; i <= bump; i++)
+     for(int i = 0; i <= bump; ++i)
      {
          if(i == bump)
          {
@@ -605,7 +605,7 @@ bool Brakes::replaceSqueek(float myPadRemaining)
 
 void Brakes::stickingRock(int depth)
 {
-    for(int i = 0; i < depth; i++)
+    for(int i = 0; i < depth; ++i)
     {
         std::cout << "SCRATCH ";
     }
@@ -659,7 +659,7 @@ void Handlebars::shiftGears(int desiredGear)
 
 void Handlebars::ringBell(int excitement)
 {
-    for(int i = 0; i <= excitement; i++)
+    for(int i = 0; i <= excitement; ++i)
         {
             if(i == excitement)
             {
@@ -717,7 +717,7 @@ void Bicycle::ringBell()
 void Bicycle::rideUphill(int height)
 {
     std::string mountain = "";
-    for(int i = 0; i <= height; i++)
+    for(int i = 0; i <= height; ++i)
    {
        mountain += "A";
        std::cout << mountain << std::endl;
