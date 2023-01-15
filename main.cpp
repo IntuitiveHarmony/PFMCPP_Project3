@@ -431,16 +431,16 @@ bool Gears::freeSpin(bool needmaintenanceGears, int speed)
     std::cout << "Initial number of gears: " << numberOfGears << std::endl;
 
     for(int i = 0; i <= speed; ++i)
-        {
-            if(i == speed)
-            {
-               std::cout << "Clanka. \n"; 
-            }
-            else
-            {
-                std::cout << "Clanka ";  
-            }
-        }
+{
+if(i == speed)
+{
+std::cout << "Clanka. \n"; 
+}
+else
+{
+std::cout << "Clanka ";  
+}
+}
     
     return needmaintenanceGears ? false : true;
 }
@@ -660,16 +660,16 @@ void Handlebars::shiftGears(int desiredGear)
 void Handlebars::ringBell(int excitement)
 {
     for(int i = 0; i <= excitement; ++i)
+    {
+        if(i == excitement)
         {
-            if(i == excitement)
-            {
-                std::cout << "Ding! \n";
-            }
-            else
-            {
-                std::cout << "Ding, ";
-            }
+            std::cout << "Ding! \n";
         }
+        else
+        {
+            std::cout << "Ding, ";
+        }
+    }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
