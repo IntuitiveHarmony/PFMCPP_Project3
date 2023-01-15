@@ -718,10 +718,10 @@ void Bicycle::rideUphill(int height)
 {
     std::string mountain = "";
     for(int i = 0; i <= height; ++i)
-   {
-       mountain += "A";
-       std::cout << mountain << std::endl;
-   }
+    {
+        mountain += "A";
+        std::cout << mountain << std::endl;
+    }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
