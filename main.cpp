@@ -113,22 +113,22 @@ void Computer::runFizzBuzz(int max)
 {
     for(int i = 1; i <= max; ++i)
     {
-         if(i % 3 == 0 && i % 5 ==0)
-         {
-             std::cout << "FizzBuzz" << std::endl;
-         } 
-         else if(i % 3 == 0)
-         {
-             std::cout << "Fizz" << std::endl;
-         } 
-         else if(i % 5 == 0)
-         {
-             std::cout << "Buzz" << std::endl;
-         } 
-         else
-         {
-             std::cout << i << std::endl;   
-         }
+        if(i % 3 == 0 && i % 5 ==0)
+        {
+            std::cout << "FizzBuzz" << std::endl;
+        } 
+        else if(i % 3 == 0)
+        {
+            std::cout << "Fizz" << std::endl;
+        } 
+        else if(i % 5 == 0)
+        {
+            std::cout << "Buzz" << std::endl;
+        } 
+        else
+        {
+            std::cout << i << std::endl;   
+        }
         
     }
 }
@@ -431,16 +431,16 @@ bool Gears::freeSpin(bool needmaintenanceGears, int speed)
     std::cout << "Initial number of gears: " << numberOfGears << std::endl;
 
     for(int i = 0; i <= speed; ++i)
-{
-if(i == speed)
-{
-std::cout << "Clanka. \n"; 
-}
-else
-{
-std::cout << "Clanka ";  
-}
-}
+    {
+        if(i == speed)
+        {
+            std::cout << "Clanka. \n"; 
+        }
+        else
+        {
+            std::cout << "Clanka ";  
+        }
+    }
     
     return needmaintenanceGears ? false : true;
 }
